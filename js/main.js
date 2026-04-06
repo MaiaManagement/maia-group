@@ -5,8 +5,161 @@
 (function () {
   'use strict';
 
+  // ── Translations ──────────────────────────────────────────────────────
+  var translations = {
+    es: {
+      'nav.about': 'Nosotros',
+      'nav.companies': 'Empresas',
+      'nav.contact': 'Contacto',
+      'hero.tagline': 'Construyendo el Futuro de Santa Marta',
+      'hero.sub': 'Grupo empresarial diversificado &middot; 11 marcas &middot; 1 visi\u00f3n',
+      'hero.cta': 'Conoce Nuestras Empresas',
+      'about.tag': 'Qui\u00e9nes Somos',
+      'about.title': 'Un ecosistema de empresas construido para la costa Caribe',
+      'about.p1': 'The Maia Group S.A.S. es un grupo empresarial con sede en Santa Marta, Colombia. Desde la costa Caribe colombiana, operamos un portafolio diversificado de empresas enfocadas en talento humano, servicios legales, bienes ra\u00edces, formaci\u00f3n profesional, construcci\u00f3n naval, bebidas artesanales, comercio local y turismo.',
+      'about.p2': 'Cada marca dentro de nuestro ecosistema funciona de manera independiente, pero comparte una filosof\u00eda com\u00fan: crear oportunidades reales, servicios de clase mundial y un impacto positivo en la regi\u00f3n. Conectamos el talento local con oportunidades globales y construimos infraestructura empresarial donde m\u00e1s se necesita.',
+      'stat.companies': 'Empresas',
+      'stat.industries': 'Industrias',
+      'stat.vision': 'Visi\u00f3n',
+      'leadership.title': 'Liderazgo',
+      'leadership.ceo': 'Director Ejecutivo',
+      'leadership.coo': 'Directora de Operaciones',
+      'brands.tag': 'Nuestro Ecosistema',
+      'brands.title': 'Las Empresas del Grupo',
+      'brands.subtitle': 'Cada marca opera de forma independiente, respaldada por la solidez del grupo.',
+      'brand.management.desc': 'Adquisici\u00f3n de talento y headhunting biling\u00fce',
+      'brand.legal.desc': 'Servicios jur\u00eddicos para empresas y expatriados',
+      'brand.realty.desc': 'Bienes ra\u00edces en la costa Caribe colombiana',
+      'brand.masters.desc': 'Desarrollo profesional y masterclasses',
+      'brand.bevida.desc': 'Bebidas bot\u00e1nicas y productos para cocteler\u00eda',
+      'brand.lleva.desc': 'Clasificados locales y marketplace',
+      'brand.juno.desc': 'Retiros creativos y estudios de contenido',
+      'brand.marine.desc': 'Construcci\u00f3n naval y operaciones mar\u00edtimas',
+      'brand.sanatorio.desc': 'Dark kitchen bar &middot; gastronom\u00eda y cocteler\u00eda',
+      'brand.ruta.desc': 'Turismo, viajes y experiencias en Colombia',
+      'brand.sushi.desc': 'Sushi callejero de autor &middot; Pr\u00f3ximamente',
+      'brand.coming-soon': 'Pr\u00f3ximamente',
+      'contact.tag': 'Contacto',
+      'contact.title': 'Hablemos',
+      'contact.text': '\u00bfInteresado en saber m\u00e1s sobre The Maia Group o alguna de nuestras empresas? Estamos aqu\u00ed para atender tus consultas.',
+      'contact.email-label': 'Email',
+      'contact.location-label': 'Ubicaci\u00f3n',
+      'contact.hours-label': 'Horario',
+      'contact.hours-value': 'Lun \u2013 Vie: 8:00 \u2013 18:00 COT',
+      'contact.location-value': 'Santa Marta, Magdalena, Colombia',
+      'form.name': 'Nombre',
+      'form.name-placeholder': 'Tu nombre completo',
+      'form.email-placeholder': 'tu@email.com',
+      'form.company': 'Empresa de inter\u00e9s',
+      'form.general': 'Consulta general',
+      'form.message': 'Mensaje',
+      'form.message-placeholder': '\u00bfEn qu\u00e9 podemos ayudarte?',
+      'form.submit': 'Enviar Mensaje',
+      'footer.tagline': 'Construyendo el futuro de Santa Marta, una empresa a la vez.',
+      'footer.companies': 'Empresas',
+      'footer.group': 'Grupo',
+      'footer.legal': 'Legal',
+      'footer.privacy': 'Pol\u00edtica de Privacidad',
+      'footer.terms': 'T\u00e9rminos de Uso',
+      'footer.copyright': '\u00a9 2026 The Maia Group S.A.S. Todos los derechos reservados.',
+      'footer.address': 'Colombia &middot; Santa Marta, Magdalena'
+    },
+    en: {
+      'nav.about': 'About',
+      'nav.companies': 'Companies',
+      'nav.contact': 'Contact',
+      'hero.tagline': 'Building the Future of Santa Marta',
+      'hero.sub': 'Diversified business group &middot; 11 brands &middot; 1 vision',
+      'hero.cta': 'Explore Our Companies',
+      'about.tag': 'About Us',
+      'about.title': 'An ecosystem of companies built for the Caribbean coast',
+      'about.p1': 'The Maia Group S.A.S. is a business group headquartered in Santa Marta, Colombia. From the Colombian Caribbean coast, we operate a diversified portfolio of companies focused on human talent, legal services, real estate, professional education, naval construction, artisan beverages, local commerce, and tourism.',
+      'about.p2': 'Each brand within our ecosystem operates independently, but shares a common philosophy: creating real opportunities, world-class services, and a positive impact on the region. We connect local talent with global opportunities and build business infrastructure where it is needed most.',
+      'stat.companies': 'Companies',
+      'stat.industries': 'Industries',
+      'stat.vision': 'Vision',
+      'leadership.title': 'Leadership',
+      'leadership.ceo': 'Chief Executive Officer',
+      'leadership.coo': 'Chief Operating Officer',
+      'brands.tag': 'Our Ecosystem',
+      'brands.title': 'Group Companies',
+      'brands.subtitle': 'Each brand operates independently, backed by the strength of the group.',
+      'brand.management.desc': 'Bilingual talent acquisition &amp; headhunting',
+      'brand.legal.desc': 'Legal services for companies and expatriates',
+      'brand.realty.desc': 'Real estate on the Colombian Caribbean coast',
+      'brand.masters.desc': 'Professional development and masterclasses',
+      'brand.bevida.desc': 'Botanical beverages and mixology products',
+      'brand.lleva.desc': 'Local classifieds and marketplace',
+      'brand.juno.desc': 'Creator retreats and content studios',
+      'brand.marine.desc': 'Boat manufacturing and maritime operations',
+      'brand.sanatorio.desc': 'Dark kitchen bar &middot; gastronomy &amp; cocktails',
+      'brand.ruta.desc': 'Tourism, travel and experiences in Colombia',
+      'brand.sushi.desc': 'Artisan street sushi &middot; Coming soon',
+      'brand.coming-soon': 'Coming Soon',
+      'contact.tag': 'Contact',
+      'contact.title': "Let's Talk",
+      'contact.text': 'Interested in learning more about The Maia Group or any of our companies? We are here to answer your inquiries.',
+      'contact.email-label': 'Email',
+      'contact.location-label': 'Location',
+      'contact.hours-label': 'Hours',
+      'contact.hours-value': 'Mon \u2013 Fri: 8:00 AM \u2013 6:00 PM COT',
+      'contact.location-value': 'Santa Marta, Magdalena, Colombia',
+      'form.name': 'Name',
+      'form.name-placeholder': 'Your full name',
+      'form.email-placeholder': 'you@email.com',
+      'form.company': 'Company of interest',
+      'form.general': 'General inquiry',
+      'form.message': 'Message',
+      'form.message-placeholder': 'How can we help you?',
+      'form.submit': 'Send Message',
+      'footer.tagline': 'Building the future of Santa Marta, one company at a time.',
+      'footer.companies': 'Companies',
+      'footer.group': 'Group',
+      'footer.legal': 'Legal',
+      'footer.privacy': 'Privacy Policy',
+      'footer.terms': 'Terms of Use',
+      'footer.copyright': '\u00a9 2026 The Maia Group S.A.S. All rights reserved.',
+      'footer.address': 'Colombia &middot; Santa Marta, Magdalena'
+    }
+  };
+
+  var currentLang = localStorage.getItem('mg-lang') || 'es';
+
+  function applyLang(lang) {
+    currentLang = lang;
+    localStorage.setItem('mg-lang', lang);
+    document.documentElement.lang = lang;
+
+    var t = translations[lang];
+
+    // Update innerHTML for all i18n elements
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (t[key] !== undefined) {
+        el.innerHTML = t[key];
+      }
+    });
+
+    // Update placeholder attributes
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n-placeholder');
+      if (t[key] !== undefined) {
+        el.placeholder = t[key];
+      }
+    });
+
+    // Update lang toggle button label (shows opposite language to switch to)
+    var btn = document.getElementById('langToggle');
+    if (btn) btn.textContent = lang === 'es' ? 'EN' : 'ES';
+
+    // Update page title
+    document.title = lang === 'en'
+      ? 'The Maia Group | Building the Future of Santa Marta'
+      : 'The Maia Group | Construyendo el Futuro de Santa Marta';
+  }
+
   // ── Navigation scroll effect ──────────────────────────────────────────
-  const nav = document.getElementById('nav');
+  var nav = document.getElementById('nav');
 
   function handleNavScroll() {
     if (window.scrollY > 60) {
@@ -20,8 +173,8 @@
   handleNavScroll();
 
   // ── Mobile menu toggle ────────────────────────────────────────────────
-  const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.getElementById('navLinks');
 
   navToggle.addEventListener('click', function () {
     navToggle.classList.toggle('nav__toggle--active');
@@ -29,7 +182,6 @@
     document.body.style.overflow = navLinks.classList.contains('nav__links--mobile-open') ? 'hidden' : '';
   });
 
-  // Close mobile menu when a link is clicked
   navLinks.querySelectorAll('.nav__link').forEach(function (link) {
     link.addEventListener('click', function () {
       navToggle.classList.remove('nav__toggle--active');
@@ -38,17 +190,24 @@
     });
   });
 
+  // ── Language toggle ───────────────────────────────────────────────────
+  var langToggle = document.getElementById('langToggle');
+  if (langToggle) {
+    langToggle.addEventListener('click', function () {
+      applyLang(currentLang === 'es' ? 'en' : 'es');
+    });
+  }
+
   // ── Smooth scroll for anchor links ────────────────────────────────────
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
-      const targetId = this.getAttribute('href');
+      var targetId = this.getAttribute('href');
       if (targetId === '#') return;
-
-      const target = document.querySelector(targetId);
+      var target = document.querySelector(targetId);
       if (target) {
         e.preventDefault();
-        const offset = nav.offsetHeight + 20;
-        const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        var offset = nav.offsetHeight + 20;
+        var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
         window.scrollTo({ top: top, behavior: 'smooth' });
       }
     });
@@ -56,29 +215,20 @@
 
   // ── Scroll reveal animations ──────────────────────────────────────────
   function initReveal() {
-    // Add reveal classes to sections
-    var sections = document.querySelectorAll('.about, .contact');
-    sections.forEach(function (section) {
-      section.classList.add('reveal');
+    document.querySelectorAll('.about, .contact').forEach(function (el) {
+      el.classList.add('reveal');
     });
 
-    // Add reveal to brands header
     var brandsHeader = document.querySelector('.brands__header');
     if (brandsHeader) brandsHeader.classList.add('reveal');
 
-    // Add stagger to brands grid
     var brandsGrid = document.querySelector('.brands__grid');
     if (brandsGrid) brandsGrid.classList.add('reveal-stagger');
 
-    // Add reveal to footer
-    var footer = document.querySelector('.footer__top');
-    if (footer) footer.classList.add('reveal');
+    var footerTop = document.querySelector('.footer__top');
+    if (footerTop) footerTop.classList.add('reveal');
 
-    // Observe
-    var observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -60px 0px'
-    };
+    var observerOptions = { threshold: 0.1, rootMargin: '0px 0px -60px 0px' };
 
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -103,17 +253,17 @@
   var contactForm = document.getElementById('contactForm');
   if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
-      // Netlify forms handle submission natively
-      // This is a fallback for local testing
-      var isNetlify = window.location.hostname.includes('netlify');
+      var isNetlify = window.location.hostname.includes('netlify') ||
+                      window.location.hostname.includes('the-maia-group');
       if (!isNetlify && window.location.protocol === 'file:') {
         e.preventDefault();
         var btn = contactForm.querySelector('.form-submit');
-        var originalText = btn.innerHTML;
-        btn.innerHTML = '¡Mensaje enviado! ✓';
+        var originalHTML = btn.innerHTML;
+        var successMsg = currentLang === 'en' ? 'Message sent! \u2713' : '\u00a1Mensaje enviado! \u2713';
+        btn.innerHTML = successMsg;
         btn.style.background = '#2E7D4B';
         setTimeout(function () {
-          btn.innerHTML = originalText;
+          btn.innerHTML = originalHTML;
           btn.style.background = '';
           contactForm.reset();
         }, 3000);
@@ -127,16 +277,14 @@
 
   function updateActiveLink() {
     var scrollPos = window.scrollY + nav.offsetHeight + 100;
-
     sectionIds.forEach(function (id, index) {
       var section = document.getElementById(id);
       if (section) {
         var top = section.offsetTop;
         var bottom = top + section.offsetHeight;
-
         if (scrollPos >= top && scrollPos < bottom) {
           navLinksAll.forEach(function (link) { link.classList.remove('nav__link--active'); });
-          navLinksAll[index].classList.add('nav__link--active');
+          if (navLinksAll[index]) navLinksAll[index].classList.add('nav__link--active');
         }
       }
     });
@@ -145,15 +293,16 @@
   window.addEventListener('scroll', updateActiveLink, { passive: true });
 
   // ── Init ──────────────────────────────────────────────────────────────
-  document.addEventListener('DOMContentLoaded', function () {
+  function init() {
+    applyLang(currentLang);
     initReveal();
     updateActiveLink();
-  });
+  }
 
-  // If DOM already loaded
-  if (document.readyState !== 'loading') {
-    initReveal();
-    updateActiveLink();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
   }
 
 })();
