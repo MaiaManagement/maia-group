@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Maia Group | Construyendo el Futuro de Santa Marta</title>
-<meta name="description" content="The Maia Group S.A.S. — Grupo empresarial con sede en Santa Marta, Colombia. Talento, derecho, bienes raíces, formación, operaciones marítimas, bebidas botánicas y más.">
-<meta name="keywords" content="Maia Group, grupo empresarial Colombia, Santa Marta, holding company Colombia, Maia Management, Maia Legal, Maia Realty, Maia Masters, Mapaná Marine, Be Vida, LlevaLleva, Juno House Studios">
+<meta name="description" content="The Maia Group S.A.S. — Grupo empresarial con sede en Santa Marta, Colombia. Talento, derecho, bienes raíces, formación, construcción naval, bebidas botánicas, turismo y más.">
+<meta name="keywords" content="Maia Group, grupo empresarial Colombia, Santa Marta, holding company Colombia, Maia Management, Maia Legal, Maia Realty, Maia Masters, Mapaná Marine, Be Vida, LlevaLleva, Juno House Studios, El Sanatorio, Ruta Colombia, Sushi Pop">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="author" content="The Maia Group S.A.S.">
-<link rel="canonical" href="https://maia-group.com/">
+<link rel="canonical" href="https://the-maia-group.com/">
 <meta name="geo.region" content="CO-MAG">
 <meta name="geo.placename" content="Santa Marta, Colombia">
 <meta name="ICBM" content="11.2408,-74.1990">
@@ -17,10 +17,11 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="The Maia Group — Construyendo el Futuro de Santa Marta">
 <meta property="og:description" content="Grupo empresarial diversificado con sede en Santa Marta, Colombia. Talento, derecho, bienes raíces, formación, operaciones marítimas y más.">
-<meta property="og:url" content="https://maia-group.com/">
+<meta property="og:url" content="https://the-maia-group.com/">
 <meta property="og:site_name" content="The Maia Group">
 <meta property="og:locale" content="es_CO">
-<meta property="og:image" content="https://maia-group.com/og-image.jpg">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:image" content="https://the-maia-group.com/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
@@ -28,7 +29,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Maia Group — Construyendo el Futuro de Santa Marta">
 <meta name="twitter:description" content="Grupo empresarial diversificado con sede en Santa Marta, Colombia.">
-<meta name="twitter:image" content="https://maia-group.com/og-image.jpg">
+<meta name="twitter:image" content="https://the-maia-group.com/og-image.jpg">
 
 <!-- Favicons -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -44,14 +45,18 @@
   "@type": "Organization",
   "name": "The Maia Group",
   "alternateName": "The Maia Group S.A.S.",
-  "description": "Grupo empresarial diversificado con sede en Santa Marta, Colombia. Operamos en talento humano, servicios legales, bienes raíces, formación profesional, operaciones marítimas, bebidas botánicas y más.",
-  "url": "https://maia-group.com",
+  "description": "Grupo empresarial diversificado con sede en Santa Marta, Colombia.",
+  "url": "https://the-maia-group.com",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Santa Marta",
     "addressRegion": "Magdalena",
     "addressCountry": "CO"
   },
+  "member": [
+    {"@type": "Person", "name": "Andrew Gallie", "jobTitle": "CEO"},
+    {"@type": "Person", "name": "Luz Gallie", "jobTitle": "COO"}
+  ],
   "subOrganization": [
     {"@type": "Organization", "name": "Maia Management", "url": "https://maia-management.com"},
     {"@type": "Organization", "name": "Maia Legal", "url": "https://maia-legal.com"},
@@ -60,7 +65,10 @@
     {"@type": "Organization", "name": "Mapaná Marine", "url": "https://mapana-marine.com"},
     {"@type": "Organization", "name": "Be Vida Botánicas", "url": "https://be-vida.com"},
     {"@type": "Organization", "name": "LlevaLleva", "url": "https://lleva-lleva.com"},
-    {"@type": "Organization", "name": "Juno House Studios", "url": "https://juno-retreats.com"}
+    {"@type": "Organization", "name": "Juno House Studios", "url": "https://juno-retreats.com"},
+    {"@type": "Organization", "name": "El Sanatorio", "url": "https://el-sanatorio.com"},
+    {"@type": "Organization", "name": "Ruta Colombia", "url": "https://ruta-colombia.com"},
+    {"@type": "Organization", "name": "Sushi Pop"}
   ],
   "knowsLanguage": ["es", "en"]
 }
@@ -85,15 +93,18 @@
       <span class="nav__logo-group">Group</span>
     </a>
     <div class="nav__links" id="navLinks">
-      <a href="#nosotros" class="nav__link">Nosotros</a>
-      <a href="#empresas" class="nav__link">Empresas</a>
-      <a href="#contacto" class="nav__link">Contacto</a>
+      <a href="#nosotros" class="nav__link" data-i18n="nav.about">Nosotros</a>
+      <a href="#empresas" class="nav__link" data-i18n="nav.companies">Empresas</a>
+      <a href="#contacto" class="nav__link" data-i18n="nav.contact">Contacto</a>
     </div>
-    <button class="nav__toggle" id="navToggle" aria-label="Abrir menú">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <div class="nav__actions">
+      <button class="nav__lang" id="langToggle" aria-label="Switch language">EN</button>
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </div>
 </nav>
 
@@ -110,10 +121,10 @@
       <span class="hero__title-maia">Maia</span>
       <span class="hero__title-group">Group</span>
     </h1>
-    <p class="hero__tagline">Construyendo el Futuro de Santa Marta</p>
+    <p class="hero__tagline" data-i18n="hero.tagline">Construyendo el Futuro de Santa Marta</p>
     <div class="hero__line"></div>
-    <p class="hero__sub">Grupo empresarial diversificado &middot; 8 marcas &middot; 1 visión</p>
-    <a href="#empresas" class="hero__cta">Conoce Nuestras Empresas</a>
+    <p class="hero__sub" data-i18n="hero.sub">Grupo empresarial diversificado &middot; 11 marcas &middot; 1 visión</p>
+    <a href="#empresas" class="hero__cta" data-i18n="hero.cta">Conoce Nuestras Empresas</a>
   </div>
   <div class="hero__scroll">
     <span>Scroll</span>
@@ -126,32 +137,51 @@
   <div class="container">
     <div class="about__grid">
       <div class="about__label">
-        <span class="section-tag">Quiénes Somos</span>
+        <span class="section-tag" data-i18n="about.tag">Quiénes Somos</span>
       </div>
       <div class="about__content">
-        <h2 class="about__title">Un ecosistema de empresas construido para la costa Caribe</h2>
-        <p class="about__text">
+        <h2 class="about__title" data-i18n="about.title">Un ecosistema de empresas construido para la costa Caribe</h2>
+        <p class="about__text" data-i18n="about.p1">
           The Maia Group S.A.S. es un grupo empresarial con sede en Santa Marta, Colombia. Desde la costa Caribe colombiana,
           operamos un portafolio diversificado de empresas enfocadas en talento humano, servicios legales, bienes raíces,
-          formación profesional, operaciones marítimas, bebidas artesanales y comercio local.
+          formación profesional, construcción naval, bebidas artesanales, comercio local y turismo.
         </p>
-        <p class="about__text">
+        <p class="about__text" data-i18n="about.p2">
           Cada marca dentro de nuestro ecosistema funciona de manera independiente, pero comparte una filosofía común:
           crear oportunidades reales, servicios de clase mundial y un impacto positivo en la región. Conectamos el talento
           local con oportunidades globales y construimos infraestructura empresarial donde más se necesita.
         </p>
         <div class="about__stats">
           <div class="stat">
-            <span class="stat__number">8</span>
-            <span class="stat__label">Empresas</span>
+            <span class="stat__number">11</span>
+            <span class="stat__label" data-i18n="stat.companies">Empresas</span>
           </div>
           <div class="stat">
-            <span class="stat__number">6+</span>
-            <span class="stat__label">Industrias</span>
+            <span class="stat__number">8+</span>
+            <span class="stat__label" data-i18n="stat.industries">Industrias</span>
           </div>
           <div class="stat">
             <span class="stat__number">1</span>
-            <span class="stat__label">Visión</span>
+            <span class="stat__label" data-i18n="stat.vision">Visión</span>
+          </div>
+        </div>
+        <div class="about__leadership">
+          <h3 class="about__leadership-title" data-i18n="leadership.title">Liderazgo</h3>
+          <div class="about__leaders">
+            <div class="about__leader">
+              <div class="about__leader-avatar">AG</div>
+              <div class="about__leader-info">
+                <strong class="about__leader-name">Andrew Gallie</strong>
+                <span class="about__leader-role" data-i18n="leadership.ceo">Director Ejecutivo</span>
+              </div>
+            </div>
+            <div class="about__leader">
+              <div class="about__leader-avatar">LG</div>
+              <div class="about__leader-info">
+                <strong class="about__leader-name">Luz Gallie</strong>
+                <span class="about__leader-role" data-i18n="leadership.coo">Directora de Operaciones</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -163,9 +193,9 @@
 <section class="brands" id="empresas">
   <div class="container">
     <div class="brands__header">
-      <span class="section-tag">Nuestro Ecosistema</span>
-      <h2 class="brands__title">Las Empresas del Grupo</h2>
-      <p class="brands__subtitle">Cada marca opera de forma independiente, respaldada por la solidez del grupo.</p>
+      <span class="section-tag" data-i18n="brands.tag">Nuestro Ecosistema</span>
+      <h2 class="brands__title" data-i18n="brands.title">Las Empresas del Grupo</h2>
+      <p class="brands__subtitle" data-i18n="brands.subtitle">Cada marca opera de forma independiente, respaldada por la solidez del grupo.</p>
     </div>
 
     <div class="brands__grid">
@@ -182,7 +212,7 @@
         </div>
         <div class="brand-card__content">
           <h3 class="brand-card__name">Maia Management</h3>
-          <p class="brand-card__desc">Adquisición de talento y headhunting bilingüe</p>
+          <p class="brand-card__desc" data-i18n="brand.management.desc">Adquisición de talento y headhunting bilingüe</p>
         </div>
         <div class="brand-card__arrow">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
@@ -193,14 +223,15 @@
       <a href="https://maia-legal.com" target="_blank" rel="noopener" class="brand-card" data-accent="legal">
         <div class="brand-card__icon">
           <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20 4v32M12 12h16M8 12l4 12h-0M32 12l-4 12h0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M8 24a4 4 0 004-0h0M28 24a4 4 0 004 0" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M20 4v32M12 12h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M8 12l4 12M32 12l-4 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M8 24a4 4 0 008 0M24 24a4 4 0 008 0" stroke="currentColor" stroke-width="1.5"/>
             <path d="M14 36h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
           </svg>
         </div>
         <div class="brand-card__content">
           <h3 class="brand-card__name">Maia Legal</h3>
-          <p class="brand-card__desc">Servicios jurídicos para empresas y expatriados</p>
+          <p class="brand-card__desc" data-i18n="brand.legal.desc">Servicios jurídicos para empresas y expatriados</p>
         </div>
         <div class="brand-card__arrow">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
@@ -218,7 +249,7 @@
         </div>
         <div class="brand-card__content">
           <h3 class="brand-card__name">Maia Realty</h3>
-          <p class="brand-card__desc">Bienes raíces en la costa Caribe colombiana</p>
+          <p class="brand-card__desc" data-i18n="brand.realty.desc">Bienes raíces en la costa Caribe colombiana</p>
         </div>
         <div class="brand-card__arrow">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
@@ -229,32 +260,14 @@
       <a href="https://maia-masters.com" target="_blank" rel="noopener" class="brand-card" data-accent="masters">
         <div class="brand-card__icon">
           <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M8 10h24v22H8z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M12 6v4M28 6v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M14 18l4 4 8-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M20 8l-14 8 14 8 14-8-14-8z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M6 16v8c0 4 6.268 8 14 8s14-4 14-8v-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M34 16v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
           </svg>
         </div>
         <div class="brand-card__content">
           <h3 class="brand-card__name">Maia Masters</h3>
-          <p class="brand-card__desc">Desarrollo profesional y masterclasses</p>
-        </div>
-        <div class="brand-card__arrow">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-        </div>
-      </a>
-
-      <!-- Mapaná Marine -->
-      <a href="https://mapana-marine.com" target="_blank" rel="noopener" class="brand-card" data-accent="marine">
-        <div class="brand-card__icon">
-          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 26c4-4 8 0 12-4s8 0 12-4 8 0 12-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M4 32c4-4 8 0 12-4s8 0 12-4 8 0 12-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
-            <path d="M20 6v18M20 12l8 6H12l8-6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="brand-card__content">
-          <h3 class="brand-card__name">Mapaná Marine</h3>
-          <p class="brand-card__desc">Operaciones marítimas y logística</p>
+          <p class="brand-card__desc" data-i18n="brand.masters.desc">Desarrollo profesional y masterclasses</p>
         </div>
         <div class="brand-card__arrow">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
@@ -272,7 +285,7 @@
         </div>
         <div class="brand-card__content">
           <h3 class="brand-card__name">Be Vida Botánicas</h3>
-          <p class="brand-card__desc">Bebidas botánicas y productos para coctelería</p>
+          <p class="brand-card__desc" data-i18n="brand.bevida.desc">Bebidas botánicas y productos para coctelería</p>
         </div>
         <div class="brand-card__arrow">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
@@ -293,7 +306,7 @@
         </div>
         <div class="brand-card__content">
           <h3 class="brand-card__name">LlevaLleva</h3>
-          <p class="brand-card__desc">Clasificados locales y marketplace</p>
+          <p class="brand-card__desc" data-i18n="brand.lleva.desc">Clasificados locales y marketplace</p>
         </div>
         <div class="brand-card__arrow">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
@@ -301,7 +314,7 @@
       </a>
 
       <!-- Juno House Studios -->
-      <a href="https://juno-retreats.com" target="_blank" rel="noopener" class="brand-card brand-card--portfolio" data-accent="juno">
+      <a href="https://juno-retreats.com" target="_blank" rel="noopener" class="brand-card" data-accent="juno">
         <div class="brand-card__icon">
           <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="8" y="6" width="24" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/>
@@ -313,13 +326,86 @@
         </div>
         <div class="brand-card__content">
           <h3 class="brand-card__name">Juno House Studios</h3>
-          <p class="brand-card__desc">Retiros creativos y estudios de contenido</p>
-          <span class="brand-card__tag">Empresa del portafolio</span>
+          <p class="brand-card__desc" data-i18n="brand.juno.desc">Retiros creativos y estudios de contenido</p>
         </div>
         <div class="brand-card__arrow">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
         </div>
       </a>
+
+      <!-- Mapaná Marine -->
+      <a href="https://mapana-marine.com" target="_blank" rel="noopener" class="brand-card" data-accent="marine">
+        <div class="brand-card__icon">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 28c4-4 8 0 12-4s8 0 12-4 8 0 12-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M4 34c4-4 8 0 12-4s8 0 12-4 8 0 12-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+            <path d="M20 8v18M20 14l8 6H12l8-6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="brand-card__content">
+          <h3 class="brand-card__name">Mapaná Marine</h3>
+          <p class="brand-card__desc" data-i18n="brand.marine.desc">Construcción naval y operaciones marítimas</p>
+        </div>
+        <div class="brand-card__arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </div>
+      </a>
+
+      <!-- El Sanatorio -->
+      <a href="https://el-sanatorio.com" target="_blank" rel="noopener" class="brand-card" data-accent="sanatorio">
+        <div class="brand-card__icon">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 34h24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M10 34V20l10-12 10 12v14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16 34v-8h8v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M17 22h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="brand-card__content">
+          <h3 class="brand-card__name">El Sanatorio</h3>
+          <p class="brand-card__desc" data-i18n="brand.sanatorio.desc">Dark kitchen bar &middot; gastronomía y coctelería</p>
+        </div>
+        <div class="brand-card__arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </div>
+      </a>
+
+      <!-- Ruta Colombia -->
+      <a href="https://ruta-colombia.com" target="_blank" rel="noopener" class="brand-card" data-accent="ruta">
+        <div class="brand-card__icon">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M20 6v28M6 20h28" stroke="currentColor" stroke-width="1.5" opacity="0.35"/>
+            <path d="M20 20l5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="20" cy="20" r="2.5" fill="currentColor"/>
+          </svg>
+        </div>
+        <div class="brand-card__content">
+          <h3 class="brand-card__name">Ruta Colombia</h3>
+          <p class="brand-card__desc" data-i18n="brand.ruta.desc">Turismo, viajes y experiencias en Colombia</p>
+        </div>
+        <div class="brand-card__arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </div>
+      </a>
+
+      <!-- Sushi Pop — Coming Soon -->
+      <div class="brand-card brand-card--soon" data-accent="sushi">
+        <div class="brand-card__icon">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="20" cy="24" rx="14" ry="7" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M6 24c0-3.866 6.268-7 14-7s14 3.134 14 7" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="20" cy="24" r="3.5" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M19 12c0-3 3-4 3-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+            <path d="M24 14c0-2 2-3 2-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+          </svg>
+        </div>
+        <div class="brand-card__content">
+          <h3 class="brand-card__name">Sushi Pop</h3>
+          <p class="brand-card__desc" data-i18n="brand.sushi.desc">Sushi callejero de autor &middot; Próximamente</p>
+          <span class="brand-card__tag brand-card__tag--soon" data-i18n="brand.coming-soon">Próximamente</span>
+        </div>
+      </div>
 
     </div>
   </div>
@@ -330,9 +416,9 @@
   <div class="container">
     <div class="contact__grid">
       <div class="contact__info">
-        <span class="section-tag">Contacto</span>
-        <h2 class="contact__title">Hablemos</h2>
-        <p class="contact__text">
+        <span class="section-tag" data-i18n="contact.tag">Contacto</span>
+        <h2 class="contact__title" data-i18n="contact.title">Hablemos</h2>
+        <p class="contact__text" data-i18n="contact.text">
           ¿Interesado en saber más sobre The Maia Group o alguna de nuestras empresas?
           Estamos aquí para atender tus consultas.
         </p>
@@ -340,22 +426,22 @@
           <div class="contact__item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
             <div>
-              <span class="contact__item-label">Email</span>
-              <a href="mailto:info@maia-group.com">info@maia-group.com</a>
+              <span class="contact__item-label" data-i18n="contact.email-label">Email</span>
+              <a href="mailto:info@the-maia-group.com">info@the-maia-group.com</a>
             </div>
           </div>
           <div class="contact__item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
             <div>
-              <span class="contact__item-label">Ubicación</span>
-              <span>Santa Marta, Magdalena, Colombia</span>
+              <span class="contact__item-label" data-i18n="contact.location-label">Ubicación</span>
+              <span data-i18n="contact.location-value">Santa Marta, Magdalena, Colombia</span>
             </div>
           </div>
           <div class="contact__item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg>
             <div>
-              <span class="contact__item-label">Horario</span>
-              <span>Lun – Vie: 8:00 – 18:00 COT</span>
+              <span class="contact__item-label" data-i18n="contact.hours-label">Horario</span>
+              <span data-i18n="contact.hours-value">Lun – Vie: 8:00 – 18:00 COT</span>
             </div>
           </div>
         </div>
@@ -365,33 +451,36 @@
           <input type="hidden" name="form-name" value="contact">
           <p class="hidden"><label>No llenar: <input name="bot-field"></label></p>
           <div class="form-group">
-            <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo">
+            <label for="nombre" data-i18n="form.name">Nombre</label>
+            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo" data-i18n-placeholder="form.name-placeholder">
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" required placeholder="tu@email.com">
+            <input type="email" id="email" name="email" required placeholder="tu@email.com" data-i18n-placeholder="form.email-placeholder">
           </div>
           <div class="form-group">
-            <label for="empresa">Empresa de interés</label>
+            <label for="empresa" data-i18n="form.company">Empresa de interés</label>
             <select id="empresa" name="empresa">
-              <option value="general">Consulta general</option>
+              <option value="general" data-i18n="form.general">Consulta general</option>
               <option value="management">Maia Management</option>
               <option value="legal">Maia Legal</option>
               <option value="realty">Maia Realty</option>
               <option value="masters">Maia Masters</option>
-              <option value="marine">Mapaná Marine</option>
               <option value="bevida">Be Vida Botánicas</option>
               <option value="lleva">LlevaLleva</option>
               <option value="juno">Juno House Studios</option>
+              <option value="marine">Mapaná Marine</option>
+              <option value="sanatorio">El Sanatorio</option>
+              <option value="ruta">Ruta Colombia</option>
+              <option value="sushi">Sushi Pop</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="mensaje">Mensaje</label>
-            <textarea id="mensaje" name="mensaje" rows="4" required placeholder="¿En qué podemos ayudarte?"></textarea>
+            <label for="mensaje" data-i18n="form.message">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required placeholder="¿En qué podemos ayudarte?" data-i18n-placeholder="form.message-placeholder"></textarea>
           </div>
           <button type="submit" class="form-submit">
-            Enviar Mensaje
+            <span data-i18n="form.submit">Enviar Mensaje</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </button>
         </form>
@@ -410,34 +499,40 @@
           <span class="footer__logo-maia">Maia</span>
           <span class="footer__logo-group">Group</span>
         </span>
-        <p class="footer__tagline">Construyendo el futuro de Santa Marta, una empresa a la vez.</p>
+        <p class="footer__tagline" data-i18n="footer.tagline">Construyendo el futuro de Santa Marta, una empresa a la vez.</p>
       </div>
       <div class="footer__links">
         <div class="footer__col">
-          <h4>Empresas</h4>
+          <h4 data-i18n="footer.companies">Empresas</h4>
           <a href="https://maia-management.com" target="_blank" rel="noopener">Maia Management</a>
           <a href="https://maia-legal.com" target="_blank" rel="noopener">Maia Legal</a>
           <a href="https://maia-realty.com" target="_blank" rel="noopener">Maia Realty</a>
           <a href="https://maia-masters.com" target="_blank" rel="noopener">Maia Masters</a>
-        </div>
-        <div class="footer__col">
-          <h4>Empresas</h4>
-          <a href="https://mapana-marine.com" target="_blank" rel="noopener">Mapaná Marine</a>
           <a href="https://be-vida.com" target="_blank" rel="noopener">Be Vida Botánicas</a>
           <a href="https://lleva-lleva.com" target="_blank" rel="noopener">LlevaLleva</a>
-          <a href="https://juno-retreats.com" target="_blank" rel="noopener">Juno House Studios</a>
         </div>
         <div class="footer__col">
-          <h4>Grupo</h4>
-          <a href="#nosotros">Nosotros</a>
-          <a href="#empresas">Empresas</a>
-          <a href="#contacto">Contacto</a>
+          <h4 data-i18n="footer.companies">Empresas</h4>
+          <a href="https://juno-retreats.com" target="_blank" rel="noopener">Juno House Studios</a>
+          <a href="https://mapana-marine.com" target="_blank" rel="noopener">Mapaná Marine</a>
+          <a href="https://el-sanatorio.com" target="_blank" rel="noopener">El Sanatorio</a>
+          <a href="https://ruta-colombia.com" target="_blank" rel="noopener">Ruta Colombia</a>
+          <span class="footer__soon">Sushi Pop &middot; <em data-i18n="brand.coming-soon">Próximamente</em></span>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer.group">Grupo</h4>
+          <a href="#nosotros" data-i18n="nav.about">Nosotros</a>
+          <a href="#empresas" data-i18n="nav.companies">Empresas</a>
+          <a href="#contacto" data-i18n="nav.contact">Contacto</a>
+          <h4 class="footer__col-h4-spacer" data-i18n="footer.legal">Legal</h4>
+          <a href="/privacidad.html" data-i18n="footer.privacy">Política de Privacidad</a>
+          <a href="/terminos.html" data-i18n="footer.terms">Términos de Uso</a>
         </div>
       </div>
     </div>
     <div class="footer__bottom">
-      <p>&copy; 2026 The Maia Group S.A.S. Todos los derechos reservados.</p>
-      <p>NIT: Colombia &middot; Santa Marta, Magdalena</p>
+      <p data-i18n="footer.copyright">&copy; 2026 The Maia Group S.A.S. Todos los derechos reservados.</p>
+      <p data-i18n="footer.address">Colombia &middot; Santa Marta, Magdalena</p>
     </div>
   </div>
 </footer>
