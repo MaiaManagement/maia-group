@@ -1023,8 +1023,8 @@ html[lang="en"] .footer__logo-the {
 
 /* Scroll Reveal */
 .reveal {
-  opacity: 0;
-  transform: translateY(30px);
+  opacity: 1;
+  transform: none;
   transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -1035,8 +1035,8 @@ html[lang="en"] .footer__logo-the {
 
 /* Stagger children */
 .reveal-stagger > * {
-  opacity: 0;
-  transform: translateY(20px);
+  opacity: 1;
+  transform: none;
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
