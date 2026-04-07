@@ -1021,23 +1021,42 @@ html[lang="en"] .footer__logo-the {
   50% { opacity: 1; }
 }
 
-/* Scroll Reveal */
+/* ==========================================================================
+   Scroll Reveal — js-ready pattern
+   Content is visible by default. JS adds .js-ready to <html>, which opts
+   elements into animation. This prevents invisible content if JS fails.
+   ========================================================================== */
+
 .reveal {
-  opacity: 1;
-  transform: none;
-  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.reveal--visible {
+/* Only hide when JS is active and controlling the reveal */
+.js-ready .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.js-ready .reveal--visible {
   opacity: 1;
   transform: translateY(0);
 }
 
 /* Stagger children */
 .reveal-stagger > * {
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.js-ready .reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.js-ready .reveal-stagger--visible > * {
   opacity: 1;
-  transform: none;
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(0);
 }
 
 .reveal-stagger--visible > *:nth-child(1) { transition-delay: 0.05s; }
@@ -1048,11 +1067,6 @@ html[lang="en"] .footer__logo-the {
 .reveal-stagger--visible > *:nth-child(6) { transition-delay: 0.3s; }
 .reveal-stagger--visible > *:nth-child(7) { transition-delay: 0.35s; }
 .reveal-stagger--visible > *:nth-child(8) { transition-delay: 0.4s; }
-
-.reveal-stagger--visible > * {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 /* ==========================================================================
    Responsive Fine-tuning
@@ -1267,4 +1281,126 @@ html[lang="en"] .footer__logo-the {
   color: var(--text-muted);
   padding: 4px 0;
   font-style: italic;
+}
+
+/* ==========================================================================
+   Focus Visible — keyboard navigation accessibility
+   ========================================================================== */
+
+:focus { outline: none; }
+
+:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+.nav__link:focus-visible,
+.nav__logo:focus-visible {
+  outline-offset: 6px;
+}
+
+.brand-card:focus-visible {
+  outline-offset: 4px;
+  border-radius: var(--r);
+}
+
+.form-group input:focus-visible,
+.form-group select:focus-visible,
+.form-group textarea:focus-visible {
+  outline: none; /* border + box-shadow already handles this */
+}
+
+/* ==========================================================================
+   Reduced Motion — respect user preference
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  html { scroll-behavior: auto; }
+
+  /* Hero elements: skip the opacity-0 start state entirely */
+  .hero__location,
+  .hero__title,
+  .hero__tagline,
+  .hero__line,
+  .hero__sub,
+  .hero__cta,
+  .hero__scroll {
+    opacity: 1;
+    animation: none;
+  }
+
+  /* Scroll reveals: show immediately without animation */
+  .js-ready .reveal,
+  .js-ready .reveal-stagger > * {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ==========================================================================
+   Visual Hierarchy & Spacing Enhancements
+   ========================================================================== */
+
+/* More breathing room in the about section */
+.about__text + .about__text {
+  margin-top: 0; /* already handled by margin-bottom on .about__text */
+}
+
+.about__title {
+  letter-spacing: -0.01em;
+}
+
+/* Lift the stats area with more visual weight */
+.about__stats {
+  padding-top: 40px;
+  margin-top: 48px;
+}
+
+.stat__number {
+  letter-spacing: -0.02em;
+}
+
+.stat__label {
+  margin-top: 2px;
+}
+
+/* More generous brand card padding on desktop */
+@media (min-width: 1024px) {
+  .brand-card {
+    padding: 32px;
+  }
+}
+
+/* Section headers: more vertical breathing room */
+.brands__header {
+  margin-bottom: 72px;
+}
+
+/* Contact section: tighten the form label caps */
+.contact__title {
+  letter-spacing: -0.01em;
+}
+
+/* Footer: slightly more generous top padding */
+.footer {
+  padding-top: 80px;
+}
+
+/* Add a subtle "brand tag" denomination to brand cards when hovered for scannability */
+.brand-card__tag {
+  background: transparent;
+}
+
+.brand-card:hover .brand-card__tag {
+  border-color: rgba(242, 101, 34, 0.3);
+  color: var(--orange);
 }

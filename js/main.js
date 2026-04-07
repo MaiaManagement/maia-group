@@ -5,6 +5,9 @@
 (function () {
   'use strict';
 
+  // Mark JS as active — enables progressive animation enhancements
+  document.documentElement.classList.add('js-ready');
+
   // ── Translations ──────────────────────────────────────────────────────
   var translations = {
     es: {
