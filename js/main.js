@@ -10,6 +10,8 @@
     es: {
       'nav.about': 'Nosotros',
       'nav.companies': 'Empresas',
+      'nav.portfolio': 'Portafolio',
+      'nav.careers': 'Empleo',
       'nav.contact': 'Contacto',
       'hero.tagline': 'Construyendo el Futuro de Santa Marta',
       'hero.sub': 'Grupo empresarial diversificado &middot; 11 marcas &middot; 1 visi\u00f3n',
@@ -67,6 +69,8 @@
     en: {
       'nav.about': 'About',
       'nav.companies': 'Companies',
+      'nav.portfolio': 'Portfolio',
+      'nav.careers': 'Careers',
       'nav.contact': 'Contact',
       'hero.tagline': 'Building the Future of Santa Marta',
       'hero.sub': 'Diversified business group &middot; 11 brands &middot; 1 vision',

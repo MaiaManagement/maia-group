@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portafolio de Empresas | The Maia Group</title>
+<meta name="description" content="Conoce las 12 empresas del ecosistema Maia Group: talento, legal, bienes raíces, formación, náutica, bebidas, comercio, creatividad, gastronomía y turismo en Colombia.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="The Maia Group S.A.S.">
+<link rel="canonical" href="https://the-maia-group.com/portfolio.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Portafolio de Empresas — The Maia Group">
+<meta property="og:description" content="12 marcas. 1 ecosistema. Santa Marta, Colombia.">
+<meta property="og:url" content="https://the-maia-group.com/portfolio.html">
+<meta property="og:site_name" content="The Maia Group">
+<meta property="og:locale" content="es_CO">
+<meta property="og:locale:alternate" content="en_US">
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="theme-color" content="#0B1D33">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+
+<style>
+/* ── Page Hero (compact) ──────────────────────────── */
+.page-hero {
+  padding: 140px 0 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.page-hero__bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 80% at 50% 0%, var(--navy-700) 0%, transparent 70%),
+    var(--surface-0);
+  z-index: 0;
+}
+.page-hero__content {
+  position: relative;
+  z-index: 1;
+}
+.page-hero__title {
+  font-family: var(--serif);
+  font-size: clamp(40px, 7vw, 80px);
+  font-weight: 400;
+  color: var(--text-primary);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+.page-hero__sub {
+  font-size: 15px;
+  color: var(--text-secondary);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ── Sector Filters ───────────────────────────────── */
+.portfolio-filters {
+  padding: 0 0 60px;
+}
+.portfolio-filters__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.filter-btn:hover,
+.filter-btn--active {
+  color: var(--orange);
+  border-color: rgba(242,101,34,0.4);
+  background: var(--orange-dim);
+}
+.filter-btn__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+/* ── Portfolio Grid ───────────────────────────────── */
+.portfolio {
+  padding: 0 0 var(--section-pad);
+}
+.portfolio__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+@media (min-width: 640px) {
+  .portfolio__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .portfolio__grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ── Portfolio Card ───────────────────────────────── */
+.pcard {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-1);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+.pcard:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+}
+.pcard__head {
+  padding: 28px 28px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.pcard__icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--orange-dim);
+  color: var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+.pcard:hover .pcard__icon {
+  background: var(--orange);
+  color: var(--white);
+}
+.pcard__icon svg { width: 24px; height: 24px; }
+.pcard__meta { flex: 1; min-width: 0; }
+.pcard__name {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: 8px;
+  transition: color 0.3s;
+}
+.pcard:hover .pcard__name { color: var(--white); }
+.pcard__sector {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--orange);
+  padding: 3px 10px;
+  border: 1px solid var(--orange-dim);
+  border-radius: 20px;
+  background: var(--orange-dim);
+}
+.pcard__sector--soon {
+  color: var(--text-muted);
+  border-color: var(--border-color);
+  background: transparent;
+}
+.pcard__body {
+  flex: 1;
+  padding: 0 28px 24px;
+}
+.pcard__desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+.pcard__footer {
+  padding: 20px 28px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pcard__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--orange);
+  transition: gap 0.3s;
+}
+.pcard__link svg { width: 14px; height: 14px; transition: transform 0.3s; }
+.pcard:hover .pcard__link { gap: 12px; }
+.pcard:hover .pcard__link svg { transform: translate(2px,-2px); }
+.pcard__link--disabled {
+  color: var(--text-muted);
+  cursor: default;
+  pointer-events: none;
+}
+.pcard__status {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+.pcard__status--active::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #2E7D4B;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+.pcard__status--soon::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+/* hidden by filter */
+.pcard--hidden { display: none; }
+
+/* ── CTA Band ─────────────────────────────────────── */
+.portfolio-cta {
+  padding: 80px 0 var(--section-pad);
+  text-align: center;
+  background: var(--surface-1);
+  border-top: 1px solid var(--border-color);
+}
+.portfolio-cta__title {
+  font-family: var(--serif);
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+.portfolio-cta__sub {
+  font-size: 15px;
+  color: var(--text-secondary);
+  max-width: 500px;
+  margin: 0 auto 36px;
+  line-height: 1.7;
+}
+.portfolio-cta__btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  background: var(--orange);
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+.btn-primary:hover { background: var(--orange-hover); }
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  border: 1px solid var(--border-hover);
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 6px;
+  transition: all 0.3s;
+}
+.btn-secondary:hover { border-color: var(--orange); color: var(--orange); }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo">
+      <span class="nav__logo-the">The</span>
+      <span class="nav__logo-maia">Maia</span>
+      <span class="nav__logo-group">Group</span>
+    </a>
+    <div class="nav__links" id="navLinks">
+      <a href="/#nosotros" class="nav__link" data-i18n="nav.about">Nosotros</a>
+      <a href="/portfolio.html" class="nav__link nav__link--active" data-i18n="nav.portfolio">Portafolio</a>
+      <a href="/careers.html" class="nav__link" data-i18n="nav.careers">Empleo</a>
+      <a href="/#contacto" class="nav__link" data-i18n="nav.contact">Contacto</a>
+    </div>
+    <div class="nav__actions">
+      <button class="nav__lang" id="langToggle" aria-label="Switch language">EN</button>
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Hero -->
+<header class="page-hero">
+  <div class="page-hero__bg"></div>
+  <div class="page-hero__content container">
+    <span class="section-tag" data-i18n="portfolio.tag">Nuestro Ecosistema</span>
+    <h1 class="page-hero__title" data-i18n="portfolio.title">Portafolio de Empresas</h1>
+    <p class="page-hero__sub" data-i18n="portfolio.sub">12 marcas independientes. Un grupo empresarial. Una misión: construir el futuro de Santa Marta desde la costa Caribe colombiana.</p>
+  </div>
+</header>
+
+<!-- Sector Filters -->
+<section class="portfolio-filters">
+  <div class="container">
+    <div class="portfolio-filters__inner" id="filterBtns">
+      <button class="filter-btn filter-btn--active" data-filter="all">
+        <span class="filter-btn__dot"></span>
+        <span data-i18n="filter.all">Todos</span>
+      </button>
+      <button class="filter-btn" data-filter="talento">
+        <span class="filter-btn__dot"></span>
+        <span data-i18n="filter.talent">Talento</span>
+      </button>
+      <button class="filter-btn" data-filter="legal">
+        <span class="filter-btn__dot"></span>
+        <span data-i18n="filter.legal">Legal</span>
+      </button>
+      <button class="filter-btn" data-filter="realestate">
+        <span class="filter-btn__dot"></span>
+        <span data-i18n="filter.realestate">Bienes Raíces</span>
+      </button>
+      <button class="filter-btn" data-filter="formacion">
+        <span class="filter-btn__dot"></span>
+        <span data-i18n="filter.education">Formación</span>
+      </button>
+      <button class="filter-btn" data-filter="naval">
+        <span class="filter-btn__dot"></span>
+        <span data-i18n="filter.naval">Naval</span>
+      </button>
+      <button class="filter-btn" data-filter="bebidas">
+        <span class="filter-btn__dot"></span>
+        <span data-i18n="filter.beverages">Bebidas</span>
+      </button>
+      <button class="filter-btn" data-filter="comercio">
+        <span class="filter-btn__dot"></span>
+        <span data-i18n="filter.commerce">Comercio</span>
+      </button>
+      <button class="filter-btn" data-filter="creatividad">
+        <span class="filter-btn__dot"></span>
+        <span data-i18n="filter.creative">Creatividad</span>
+      </button>
+      <button class="filter-btn" data-filter="gastronomia">
+        <span class="filter-btn__dot"></span>
+        <span data-i18n="filter.food">Gastronomía</span>
+      </button>
+      <button class="filter-btn" data-filter="turismo">
+        <span class="filter-btn__dot"></span>
+        <span data-i18n="filter.tourism">Turismo</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio Grid -->
+<section class="portfolio">
+  <div class="container">
+    <div class="portfolio__grid" id="portfolioGrid">
+
+      <!-- 1. Maia Management -->
+      <div class="pcard" data-sector="talento">
+        <div class="pcard__head">
+          <div class="pcard__icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="20" cy="12" r="6" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M8 34c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="31" cy="10" r="4" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+              <path d="M35 22c0-3.5-2-6-4.5-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+            </svg>
+          </div>
+          <div class="pcard__meta">
+            <h2 class="pcard__name">Maia Management</h2>
+            <span class="pcard__sector" data-i18n="sector.talent">Talento Humano</span>
+          </div>
+        </div>
+        <div class="pcard__body">
+          <p class="pcard__desc" data-i18n="pcard.management.desc">Agencia de headhunting y adquisición de talento bilingüe especializada en perfiles ejecutivos, técnicos y creativos para empresas en Colombia y el extranjero. Conectamos talento local con oportunidades globales.</p>
+        </div>
+        <div class="pcard__footer">
+          <a href="https://maia-management.com" target="_blank" rel="noopener" class="pcard__link">
+            <span data-i18n="pcard.visit">Visitar sitio</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+          <span class="pcard__status pcard__status--active" data-i18n="status.active">Activo</span>
+        </div>
+      </div>
+
+      <!-- 2. Maia Legal -->
+      <div class="pcard" data-sector="legal">
+        <div class="pcard__head">
+          <div class="pcard__icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 4v32M12 12h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M8 12l4 12M32 12l-4 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M8 24a4 4 0 008 0M24 24a4 4 0 008 0" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M14 36h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="pcard__meta">
+            <h2 class="pcard__name">Maia Legal</h2>
+            <span class="pcard__sector" data-i18n="sector.legal">Servicios Jurídicos</span>
+          </div>
+        </div>
+        <div class="pcard__body">
+          <p class="pcard__desc" data-i18n="pcard.legal.desc">Firma de servicios legales integrales para empresas, inversionistas extranjeros y expatriados en Colombia. Asesoría en constitución empresarial, migración, contratos, propiedad raíz y litigios comerciales.</p>
+        </div>
+        <div class="pcard__footer">
+          <a href="https://maia-legal.com" target="_blank" rel="noopener" class="pcard__link">
+            <span data-i18n="pcard.visit">Visitar sitio</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+          <span class="pcard__status pcard__status--active" data-i18n="status.active">Activo</span>
+        </div>
+      </div>
+
+      <!-- 3. Maia Realty -->
+      <div class="pcard" data-sector="realestate">
+        <div class="pcard__head">
+          <div class="pcard__icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 18L20 6l14 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M10 16v18h20V16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M16 34V24h8v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="pcard__meta">
+            <h2 class="pcard__name">Maia Realty</h2>
+            <span class="pcard__sector" data-i18n="sector.realestate">Bienes Raíces</span>
+          </div>
+        </div>
+        <div class="pcard__body">
+          <p class="pcard__desc" data-i18n="pcard.realty.desc">Agencia inmobiliaria especializada en la compraventa, arrendamiento y gestión de propiedades en la costa Caribe colombiana. Servicio bilingüe para compradores nacionales e internacionales.</p>
+        </div>
+        <div class="pcard__footer">
+          <a href="https://maia-realty.com" target="_blank" rel="noopener" class="pcard__link">
+            <span data-i18n="pcard.visit">Visitar sitio</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+          <span class="pcard__status pcard__status--active" data-i18n="status.active">Activo</span>
+        </div>
+      </div>
+
+      <!-- 4. Maia Masters -->
+      <div class="pcard" data-sector="formacion">
+        <div class="pcard__head">
+          <div class="pcard__icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 8l-14 8 14 8 14-8-14-8z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M6 16v8c0 4 6.268 8 14 8s14-4 14-8v-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M34 16v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="pcard__meta">
+            <h2 class="pcard__name">Maia Masters</h2>
+            <span class="pcard__sector" data-i18n="sector.education">Formación Profesional</span>
+          </div>
+        </div>
+        <div class="pcard__body">
+          <p class="pcard__desc" data-i18n="pcard.masters.desc">Plataforma de masterclasses y desarrollo profesional para ejecutivos y emprendedores. Programas prácticos en liderazgo, negocios internacionales, marketing digital y habilidades bilingües.</p>
+        </div>
+        <div class="pcard__footer">
+          <a href="https://maia-masters.com" target="_blank" rel="noopener" class="pcard__link">
+            <span data-i18n="pcard.visit">Visitar sitio</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+          <span class="pcard__status pcard__status--active" data-i18n="status.active">Activo</span>
+        </div>
+      </div>
+
+      <!-- 5. Mapaná Marine -->
+      <div class="pcard" data-sector="naval">
+        <div class="pcard__head">
+          <div class="pcard__icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 28c4-4 8 0 12-4s8 0 12-4 8 0 12-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M4 34c4-4 8 0 12-4s8 0 12-4 8 0 12-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+              <path d="M20 8v18M20 14l8 6H12l8-6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="pcard__meta">
+            <h2 class="pcard__name">Mapaná Marine</h2>
+            <span class="pcard__sector" data-i18n="sector.naval">Náutica &amp; Naval</span>
+          </div>
+        </div>
+        <div class="pcard__body">
+          <p class="pcard__desc" data-i18n="pcard.marine.desc">Astillero y empresa de operaciones marítimas en Santa Marta. Diseño y construcción de embarcaciones a medida, mantenimiento náutico y servicios de chárter para el Caribe colombiano.</p>
+        </div>
+        <div class="pcard__footer">
+          <a href="https://mapana-marine.com" target="_blank" rel="noopener" class="pcard__link">
+            <span data-i18n="pcard.visit">Visitar sitio</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+          <span class="pcard__status pcard__status--active" data-i18n="status.active">Activo</span>
+        </div>
+      </div>
+
+      <!-- 6. Be Vida Botánicas -->
+      <div class="pcard" data-sector="bebidas">
+        <div class="pcard__head">
+          <div class="pcard__icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 36V18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M20 18c0-8 8-14 16-14-2 8-8 14-16 14z" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M20 24c0-6-6-10-12-10 1.5 6 6 10 12 10z" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <div class="pcard__meta">
+            <h2 class="pcard__name">Be Vida Botánicas</h2>
+            <span class="pcard__sector" data-i18n="sector.beverages">Bebidas &amp; Botánica</span>
+          </div>
+        </div>
+        <div class="pcard__body">
+          <p class="pcard__desc" data-i18n="pcard.bevida.desc">Marca artesanal de bebidas botánicas, siropes y productos para coctelería de autor. Ingredientes tropicales de la costa Caribe, elaborados con procesos naturales para bares, restaurantes y consumo personal.</p>
+        </div>
+        <div class="pcard__footer">
+          <a href="https://be-vida.com" target="_blank" rel="noopener" class="pcard__link">
+            <span data-i18n="pcard.visit">Visitar sitio</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+          <span class="pcard__status pcard__status--active" data-i18n="status.active">Activo</span>
+        </div>
+      </div>
+
+      <!-- 7. LlevaLleva -->
+      <div class="pcard" data-sector="comercio">
+        <div class="pcard__head">
+          <div class="pcard__icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="6" width="28" height="28" rx="4" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M6 16h28" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M16 16v18" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="11" cy="11" r="2" fill="currentColor" opacity="0.5"/>
+              <circle cx="24" cy="26" r="4" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M27 29l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="pcard__meta">
+            <h2 class="pcard__name">LlevaLleva</h2>
+            <span class="pcard__sector" data-i18n="sector.commerce">Comercio Local</span>
+          </div>
+        </div>
+        <div class="pcard__body">
+          <p class="pcard__desc" data-i18n="pcard.lleva.desc">Plataforma de clasificados locales y marketplace enfocada en Santa Marta y la costa Caribe. Conecta compradores, vendedores y prestadores de servicios de manera simple, rápida y confiable.</p>
+        </div>
+        <div class="pcard__footer">
+          <a href="https://lleva-lleva.com" target="_blank" rel="noopener" class="pcard__link">
+            <span data-i18n="pcard.visit">Visitar sitio</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+          <span class="pcard__status pcard__status--active" data-i18n="status.active">Activo</span>
+        </div>
+      </div>
+
+      <!-- 8. Juno House Studios -->
+      <div class="pcard" data-sector="creatividad">
+        <div class="pcard__head">
+          <div class="pcard__icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="6" width="24" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="20" cy="14" r="4" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M14 30h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M20 22v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M12 34h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="pcard__meta">
+            <h2 class="pcard__name">Juno House Studios</h2>
+            <span class="pcard__sector" data-i18n="sector.creative">Creatividad &amp; Retiros</span>
+          </div>
+        </div>
+        <div class="pcard__body">
+          <p class="pcard__desc" data-i18n="pcard.juno.desc">Espacio de retiros creativos, producción de contenido y estudios para creadores digitales en el Caribe colombiano. Programa residencias, talleres y producción audiovisual en un entorno único.</p>
+        </div>
+        <div class="pcard__footer">
+          <a href="https://juno-retreats.com" target="_blank" rel="noopener" class="pcard__link">
+            <span data-i18n="pcard.visit">Visitar sitio</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+          <span class="pcard__status pcard__status--active" data-i18n="status.active">Activo</span>
+        </div>
+      </div>
+
+      <!-- 9. El Sanatorio -->
+      <div class="pcard" data-sector="gastronomia">
+        <div class="pcard__head">
+          <div class="pcard__icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 34h24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M10 34V20l10-12 10 12v14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M16 34v-8h8v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M17 22h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="pcard__meta">
+            <h2 class="pcard__name">El Sanatorio</h2>
+            <span class="pcard__sector" data-i18n="sector.food">Gastronomía</span>
+          </div>
+        </div>
+        <div class="pcard__body">
+          <p class="pcard__desc" data-i18n="pcard.sanatorio.desc">Dark kitchen bar de autor en Santa Marta. Propuesta gastronómica de fusión Caribe con coctelería de nivel, ambiente underground y un menú que cambia con cada temporada.</p>
+        </div>
+        <div class="pcard__footer">
+          <a href="https://el-sanatorio.com" target="_blank" rel="noopener" class="pcard__link">
+            <span data-i18n="pcard.visit">Visitar sitio</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+          <span class="pcard__status pcard__status--active" data-i18n="status.active">Activo</span>
+        </div>
+      </div>
+
+      <!-- 10. Ruta Colombia -->
+      <div class="pcard" data-sector="turismo">
+        <div class="pcard__head">
+          <div class="pcard__icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M20 6v28M6 20h28" stroke="currentColor" stroke-width="1.5" opacity="0.35"/>
+              <path d="M20 20l5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="20" cy="20" r="2.5" fill="currentColor"/>
+            </svg>
+          </div>
+          <div class="pcard__meta">
+            <h2 class="pcard__name">Ruta Colombia</h2>
+            <span class="pcard__sector" data-i18n="sector.tourism">Turismo &amp; Viajes</span>
+          </div>
+        </div>
+        <div class="pcard__body">
+          <p class="pcard__desc" data-i18n="pcard.ruta.desc">Agencia de turismo receptivo y experiencias auténticas en Colombia. Itinerarios a medida, turismo de aventura en el Caribe y rutas culturales que conectan viajeros con lo mejor del país.</p>
+        </div>
+        <div class="pcard__footer">
+          <a href="https://ruta-colombia.com" target="_blank" rel="noopener" class="pcard__link">
+            <span data-i18n="pcard.visit">Visitar sitio</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+          <span class="pcard__status pcard__status--active" data-i18n="status.active">Activo</span>
+        </div>
+      </div>
+
+      <!-- 11. Sushi Pop -->
+      <div class="pcard" data-sector="gastronomia">
+        <div class="pcard__head">
+          <div class="pcard__icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="20" cy="24" rx="14" ry="7" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M6 24c0-3.866 6.268-7 14-7s14 3.134 14 7" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="20" cy="24" r="3.5" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M19 12c0-3 3-4 3-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+              <path d="M24 14c0-2 2-3 2-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+            </svg>
+          </div>
+          <div class="pcard__meta">
+            <h2 class="pcard__name">Sushi Pop</h2>
+            <span class="pcard__sector pcard__sector--soon" data-i18n="status.soon">Próximamente</span>
+          </div>
+        </div>
+        <div class="pcard__body">
+          <p class="pcard__desc" data-i18n="pcard.sushi.desc">Concepto de sushi callejero de autor para Santa Marta. Rolls creativos con ingredientes del Caribe, formatos de food truck y pop-up que llevan la cultura japonesa a la costa colombiana.</p>
+        </div>
+        <div class="pcard__footer">
+          <span class="pcard__link pcard__link--disabled">
+            <span data-i18n="pcard.soon-label">Lanzamiento próximo</span>
+          </span>
+          <span class="pcard__status pcard__status--soon" data-i18n="status.soon">Próximamente</span>
+        </div>
+      </div>
+
+      <!-- 12. Nuevo Lanzamiento -->
+      <div class="pcard" data-sector="">
+        <div class="pcard__head">
+          <div class="pcard__icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <path d="M20 14v12M14 20h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="pcard__meta">
+            <h2 class="pcard__name" data-i18n="pcard.new.name">Nuevo Proyecto</h2>
+            <span class="pcard__sector pcard__sector--soon" data-i18n="status.soon">Próximamente</span>
+          </div>
+        </div>
+        <div class="pcard__body">
+          <p class="pcard__desc" data-i18n="pcard.new.desc">El Maia Group continúa creciendo. Un nuevo emprendimiento se suma al ecosistema próximamente. Síguenos para conocer los detalles del próximo lanzamiento del grupo.</p>
+        </div>
+        <div class="pcard__footer">
+          <a href="/#contacto" class="pcard__link">
+            <span data-i18n="pcard.new.cta">Más información</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+          <span class="pcard__status pcard__status--soon" data-i18n="status.soon">Próximamente</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA Band -->
+<section class="portfolio-cta">
+  <div class="container">
+    <h2 class="portfolio-cta__title" data-i18n="portfolio.cta.title">¿Listo para trabajar con nosotros?</h2>
+    <p class="portfolio-cta__sub" data-i18n="portfolio.cta.sub">Explora oportunidades de empleo en cualquiera de nuestras empresas o contáctanos para conocer más sobre el grupo.</p>
+    <div class="portfolio-cta__btns">
+      <a href="/careers.html" class="btn-primary">
+        <span data-i18n="portfolio.cta.jobs">Ver Oportunidades de Empleo</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="/#contacto" class="btn-secondary">
+        <span data-i18n="portfolio.cta.contact">Contactar al Grupo</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a href="/" class="footer__logo">
+          <span class="footer__logo-the">The</span>
+          <span class="footer__logo-maia">Maia</span>
+          <span class="footer__logo-group">Group</span>
+        </a>
+        <p class="footer__tagline" data-i18n="footer.tagline">Construyendo el futuro de Santa Marta, una empresa a la vez.</p>
+      </div>
+      <div class="footer__links">
+        <div class="footer__col">
+          <h4 data-i18n="footer.companies">Empresas</h4>
+          <a href="https://maia-management.com" target="_blank" rel="noopener">Maia Management</a>
+          <a href="https://maia-legal.com" target="_blank" rel="noopener">Maia Legal</a>
+          <a href="https://maia-realty.com" target="_blank" rel="noopener">Maia Realty</a>
+          <a href="https://maia-masters.com" target="_blank" rel="noopener">Maia Masters</a>
+          <a href="https://be-vida.com" target="_blank" rel="noopener">Be Vida Bot&#225;nicas</a>
+          <a href="https://lleva-lleva.com" target="_blank" rel="noopener">LlevaLleva</a>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer.companies">Empresas</h4>
+          <a href="https://juno-retreats.com" target="_blank" rel="noopener">Juno House Studios</a>
+          <a href="https://mapana-marine.com" target="_blank" rel="noopener">Mapa&#769;na&#769; Marine</a>
+          <a href="https://el-sanatorio.com" target="_blank" rel="noopener">El Sanatorio</a>
+          <a href="https://ruta-colombia.com" target="_blank" rel="noopener">Ruta Colombia</a>
+          <span class="footer__soon">Sushi Pop &middot; <em data-i18n="status.soon">Pr&#243;ximamente</em></span>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer.group">Grupo</h4>
+          <a href="/#nosotros" data-i18n="nav.about">Nosotros</a>
+          <a href="/portfolio.html" data-i18n="nav.portfolio">Portafolio</a>
+          <a href="/careers.html" data-i18n="nav.careers">Empleo</a>
+          <a href="/#contacto" data-i18n="nav.contact">Contacto</a>
+          <h4 class="footer__col-h4-spacer" data-i18n="footer.legal">Legal</h4>
+          <a href="/privacidad.html" data-i18n="footer.privacy">Política de Privacidad</a>
+          <a href="/terminos.html" data-i18n="footer.terms">Términos de Uso</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p data-i18n="footer.copyright">&copy; 2026 The Maia Group S.A.S. Todos los derechos reservados.</p>
+      <p data-i18n="footer.address">Colombia &middot; Santa Marta, Magdalena</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  var WHATSAPP_NUMBER = '573000000000'; // TODO: update with real WhatsApp number
+
+  var translations = {
+    es: {
+      'nav.about': 'Nosotros',
+      'nav.portfolio': 'Portafolio',
+      'nav.careers': 'Empleo',
+      'nav.contact': 'Contacto',
+      'portfolio.tag': 'Nuestro Ecosistema',
+      'portfolio.title': 'Portafolio de Empresas',
+      'portfolio.sub': '12 marcas independientes. Un grupo empresarial. Una misi\u00f3n: construir el futuro de Santa Marta desde la costa Caribe colombiana.',
+      'filter.all': 'Todos',
+      'filter.talent': 'Talento',
+      'filter.legal': 'Legal',
+      'filter.realestate': 'Bienes Ra\u00edces',
+      'filter.education': 'Formaci\u00f3n',
+      'filter.naval': 'Naval',
+      'filter.beverages': 'Bebidas',
+      'filter.commerce': 'Comercio',
+      'filter.creative': 'Creatividad',
+      'filter.food': 'Gastronom\u00eda',
+      'filter.tourism': 'Turismo',
+      'sector.talent': 'Talento Humano',
+      'sector.legal': 'Servicios Jur\u00eddicos',
+      'sector.realestate': 'Bienes Ra\u00edces',
+      'sector.education': 'Formaci\u00f3n Profesional',
+      'sector.naval': 'N\u00e1utica &amp; Naval',
+      'sector.beverages': 'Bebidas &amp; Bot\u00e1nica',
+      'sector.commerce': 'Comercio Local',
+      'sector.creative': 'Creatividad &amp; Retiros',
+      'sector.food': 'Gastronom\u00eda',
+      'sector.tourism': 'Turismo &amp; Viajes',
+      'pcard.visit': 'Visitar sitio',
+      'pcard.soon-label': 'Lanzamiento pr\u00f3ximo',
+      'pcard.management.desc': 'Agencia de headhunting y adquisici\u00f3n de talento biling\u00fce especializada en perfiles ejecutivos, t\u00e9cnicos y creativos para empresas en Colombia y el extranjero. Conectamos talento local con oportunidades globales.',
+      'pcard.legal.desc': 'Firma de servicios legales integrales para empresas, inversionistas extranjeros y expatriados en Colombia. Asesor\u00eda en constituci\u00f3n empresarial, migraci\u00f3n, contratos, propiedad ra\u00edz y litigios comerciales.',
+      'pcard.realty.desc': 'Agencia inmobiliaria especializada en la compraventa, arrendamiento y gesti\u00f3n de propiedades en la costa Caribe colombiana. Servicio biling\u00fce para compradores nacionales e internacionales.',
+      'pcard.masters.desc': 'Plataforma de masterclasses y desarrollo profesional para ejecutivos y emprendedores. Programas pr\u00e1cticos en liderazgo, negocios internacionales, marketing digital y habilidades biling\u00fces.',
+      'pcard.marine.desc': 'Astillero y empresa de operaciones mar\u00edtimas en Santa Marta. Dise\u00f1o y construcci\u00f3n de embarcaciones a medida, mantenimiento n\u00e1utico y servicios de ch\u00e1rter para el Caribe colombiano.',
+      'pcard.bevida.desc': 'Marca artesanal de bebidas bot\u00e1nicas, siropes y productos para cocteler\u00eda de autor. Ingredientes tropicales de la costa Caribe, elaborados con procesos naturales para bares, restaurantes y consumo personal.',
+      'pcard.lleva.desc': 'Plataforma de clasificados locales y marketplace enfocada en Santa Marta y la costa Caribe. Conecta compradores, vendedores y prestadores de servicios de manera simple, r\u00e1pida y confiable.',
+      'pcard.juno.desc': 'Espacio de retiros creativos, producci\u00f3n de contenido y estudios para creadores digitales en el Caribe colombiano. Programa residencias, talleres y producci\u00f3n audiovisual en un entorno \u00fanico.',
+      'pcard.sanatorio.desc': 'Dark kitchen bar de autor en Santa Marta. Propuesta gastron\u00f3mica de fusi\u00f3n Caribe con cocteler\u00eda de nivel, ambiente underground y un men\u00fa que cambia con cada temporada.',
+      'pcard.ruta.desc': 'Agencia de turismo receptivo y experiencias aut\u00e9nticas en Colombia. Itinerarios a medida, turismo de aventura en el Caribe y rutas culturales que conectan viajeros con lo mejor del pa\u00eds.',
+      'pcard.sushi.desc': 'Concepto de sushi callejero de autor para Santa Marta. Rolls creativos con ingredientes del Caribe, formatos de food truck y pop-up que llevan la cultura japonesa a la costa colombiana.',
+      'pcard.new.name': 'Nuevo Proyecto',
+      'pcard.new.desc': 'El Maia Group contin\u00faa creciendo. Un nuevo emprendimiento se suma al ecosistema pr\u00f3ximamente. S\u00edguenos para conocer los detalles del pr\u00f3ximo lanzamiento del grupo.',
+      'pcard.new.cta': 'M\u00e1s informaci\u00f3n',
+      'status.active': 'Activo',
+      'status.soon': 'Pr\u00f3ximamente',
+      'portfolio.cta.title': '\u00bfListo para trabajar con nosotros?',
+      'portfolio.cta.sub': 'Explora oportunidades de empleo en cualquiera de nuestras empresas o cont\u00e1ctanos para conocer m\u00e1s sobre el grupo.',
+      'portfolio.cta.jobs': 'Ver Oportunidades de Empleo',
+      'portfolio.cta.contact': 'Contactar al Grupo',
+      'footer.tagline': 'Construyendo el futuro de Santa Marta, una empresa a la vez.',
+      'footer.companies': 'Empresas',
+      'footer.group': 'Grupo',
+      'footer.legal': 'Legal',
+      'footer.privacy': 'Pol\u00edtica de Privacidad',
+      'footer.terms': 'T\u00e9rminos de Uso',
+      'footer.copyright': '\u00a9 2026 The Maia Group S.A.S. Todos los derechos reservados.',
+      'footer.address': 'Colombia &middot; Santa Marta, Magdalena'
+    },
+    en: {
+      'nav.about': 'About',
+      'nav.portfolio': 'Portfolio',
+      'nav.careers': 'Careers',
+      'nav.contact': 'Contact',
+      'portfolio.tag': 'Our Ecosystem',
+      'portfolio.title': 'Company Portfolio',
+      'portfolio.sub': '12 independent brands. One business group. One mission: building the future of Santa Marta from the Colombian Caribbean coast.',
+      'filter.all': 'All',
+      'filter.talent': 'Talent',
+      'filter.legal': 'Legal',
+      'filter.realestate': 'Real Estate',
+      'filter.education': 'Education',
+      'filter.naval': 'Naval',
+      'filter.beverages': 'Beverages',
+      'filter.commerce': 'Commerce',
+      'filter.creative': 'Creative',
+      'filter.food': 'Food',
+      'filter.tourism': 'Tourism',
+      'sector.talent': 'Human Talent',
+      'sector.legal': 'Legal Services',
+      'sector.realestate': 'Real Estate',
+      'sector.education': 'Professional Education',
+      'sector.naval': 'Nautical &amp; Naval',
+      'sector.beverages': 'Beverages &amp; Botanicals',
+      'sector.commerce': 'Local Commerce',
+      'sector.creative': 'Creative &amp; Retreats',
+      'sector.food': 'Gastronomy',
+      'sector.tourism': 'Tourism &amp; Travel',
+      'pcard.visit': 'Visit site',
+      'pcard.soon-label': 'Launching soon',
+      'pcard.management.desc': 'Bilingual headhunting and talent acquisition agency specializing in executive, technical, and creative profiles for companies in Colombia and abroad. Connecting local talent with global opportunities.',
+      'pcard.legal.desc': 'Full-service legal firm for businesses, foreign investors, and expats in Colombia. Advisory on company formation, immigration, contracts, real estate, and commercial litigation.',
+      'pcard.realty.desc': 'Real estate agency specializing in buying, selling, and managing properties on the Colombian Caribbean coast. Bilingual service for local and international buyers.',
+      'pcard.masters.desc': 'Masterclass and professional development platform for executives and entrepreneurs. Practical programs in leadership, international business, digital marketing, and bilingual skills.',
+      'pcard.marine.desc': 'Boatyard and maritime operations company in Santa Marta. Custom vessel design and construction, nautical maintenance, and charter services for the Colombian Caribbean.',
+      'pcard.bevida.desc': 'Artisan brand of botanical beverages, syrups, and mixology products. Tropical ingredients from the Caribbean coast, crafted with natural processes for bars, restaurants, and personal use.',
+      'pcard.lleva.desc': 'Local classifieds and marketplace platform focused on Santa Marta and the Caribbean coast. Connects buyers, sellers, and service providers in a simple, fast, and reliable way.',
+      'pcard.juno.desc': 'Creative retreat space, content production, and studios for digital creators in the Colombian Caribbean. Offers residencies, workshops, and audiovisual production in a unique setting.',
+      'pcard.sanatorio.desc': 'Signature dark kitchen bar in Santa Marta. Caribbean fusion gastronomy with craft cocktails, underground atmosphere, and a seasonal menu that changes every time.',
+      'pcard.ruta.desc': 'Inbound tourism agency and authentic experiences in Colombia. Custom itineraries, Caribbean adventure tourism, and cultural routes connecting travelers with the best of the country.',
+      'pcard.sushi.desc': 'Artisan street sushi concept for Santa Marta. Creative rolls with Caribbean ingredients, food truck and pop-up formats bringing Japanese culture to the Colombian coast.',
+      'pcard.new.name': 'New Project',
+      'pcard.new.desc': 'The Maia Group keeps growing. A new venture joins the ecosystem soon. Follow us to learn about the group\'s next launch.',
+      'pcard.new.cta': 'Learn more',
+      'status.active': 'Active',
+      'status.soon': 'Coming Soon',
+      'portfolio.cta.title': 'Ready to work with us?',
+      'portfolio.cta.sub': 'Explore job opportunities across any of our companies or contact us to learn more about the group.',
+      'portfolio.cta.jobs': 'View Job Opportunities',
+      'portfolio.cta.contact': 'Contact the Group',
+      'footer.tagline': 'Building the future of Santa Marta, one company at a time.',
+      'footer.companies': 'Companies',
+      'footer.group': 'Group',
+      'footer.legal': 'Legal',
+      'footer.privacy': 'Privacy Policy',
+      'footer.terms': 'Terms of Use',
+      'footer.copyright': '\u00a9 2026 The Maia Group S.A.S. All rights reserved.',
+      'footer.address': 'Colombia &middot; Santa Marta, Magdalena'
+    }
+  };
+
+  var currentLang = localStorage.getItem('mg-lang') || 'es';
+
+  function applyLang(lang) {
+    currentLang = lang;
+    localStorage.setItem('mg-lang', lang);
+    document.documentElement.lang = lang;
+    var t = translations[lang];
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (t[key] !== undefined) el.innerHTML = t[key];
+    });
+    var btn = document.getElementById('langToggle');
+    if (btn) btn.textContent = lang === 'es' ? 'EN' : 'ES';
+    document.title = lang === 'en'
+      ? 'Company Portfolio | The Maia Group'
+      : 'Portafolio de Empresas | The Maia Group';
+  }
+
+  // Nav scroll
+  var nav = document.getElementById('nav');
+  function handleNavScroll() {
+    if (window.scrollY > 60) nav.classList.add('nav--scrolled');
+    else nav.classList.remove('nav--scrolled');
+  }
+  window.addEventListener('scroll', handleNavScroll, { passive: true });
+  handleNavScroll();
+
+  // Mobile menu
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', function () {
+    navToggle.classList.toggle('nav__toggle--active');
+    navLinks.classList.toggle('nav__links--mobile-open');
+    document.body.style.overflow = navLinks.classList.contains('nav__links--mobile-open') ? 'hidden' : '';
+  });
+  navLinks.querySelectorAll('.nav__link').forEach(function (link) {
+    link.addEventListener('click', function () {
+      navToggle.classList.remove('nav__toggle--active');
+      navLinks.classList.remove('nav__links--mobile-open');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // Lang toggle
+  var langToggle = document.getElementById('langToggle');
+  if (langToggle) {
+    langToggle.addEventListener('click', function () {
+      applyLang(currentLang === 'es' ? 'en' : 'es');
+    });
+  }
+
+  // Sector filter
+  var filterBtns = document.querySelectorAll('.filter-btn');
+  var cards = document.querySelectorAll('.pcard');
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var sector = btn.getAttribute('data-filter');
+      filterBtns.forEach(function (b) { b.classList.remove('filter-btn--active'); });
+      btn.classList.add('filter-btn--active');
+      cards.forEach(function (card) {
+        var cardSector = card.getAttribute('data-sector') || '';
+        if (sector === 'all' || cardSector === sector) {
+          card.classList.remove('pcard--hidden');
+        } else {
+          card.classList.add('pcard--hidden');
+        }
+      });
+    });
+  });
+
+  // Init
+  applyLang(currentLang);
+
+})();
+</script>
+</body>
+</html>
