@@ -133,11 +133,10 @@
     }
   };
 
-  var currentLang = localStorage.getItem('mg-lang') || 'es';
+  var currentLang = 'es';
 
   function applyLang(lang) {
     currentLang = lang;
-    localStorage.setItem('mg-lang', lang);
     document.documentElement.lang = lang;
 
     var t = translations[lang];
