@@ -1,16 +1,6 @@
-// File: maia-group/js/main.js
 /* ==========================================================================
    The Maia Group — Main JavaScript
    ========================================================================== */
-
-/* FIX: Added no-JS support — inject .no-js on <html> via a <noscript> tag in
-   the HTML, or detect here. Since JS is running, we ensure the class is
-   REMOVED so CSS no-js fallback rules don't accidentally fire (audit finding #8) */
-(function () {
-  // If the HTML element has a 'no-js' class (added server-side or via <noscript>),
-  // remove it now that JS is confirmed running.
-  document.documentElement.classList.remove('no-js');
-})();
 
 (function () {
   'use strict';
@@ -225,12 +215,6 @@
 
   // ── Scroll reveal animations ──────────────────────────────────────────
   function initReveal() {
-    /* FIX: Added prefers-reduced-motion check before setting up IntersectionObserver
-       animations. If the user prefers reduced motion, we immediately make all
-       reveal elements visible without any transition (audit finding #5 / #8) */
-    var prefersReducedMotion = window.matchMedia &&
-                               window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
     document.querySelectorAll('.about, .contact').forEach(function (el) {
       el.classList.add('reveal');
     });
@@ -244,32 +228,7 @@
     var footerTop = document.querySelector('.footer__top');
     if (footerTop) footerTop.classList.add('reveal');
 
-    /* FIX: If prefers-reduced-motion is active, skip the IntersectionObserver
-       entirely and make everything visible immediately (audit finding #5) */
-    if (prefersReducedMotion) {
-      document.querySelectorAll('.reveal').forEach(function (el) {
-        el.classList.add('reveal--visible');
-      });
-      document.querySelectorAll('.reveal-stagger').forEach(function (el) {
-        el.classList.add('reveal-stagger--visible');
-      });
-      return; // Exit early — no observer needed
-    }
-
     var observerOptions = { threshold: 0.1, rootMargin: '0px 0px -60px 0px' };
-
-    /* FIX: Added IntersectionObserver feature-detection as part of the no-JS /
-       degraded-environment fallback. If IntersectionObserver is not available
-       (very old browsers), reveal all elements immediately (audit finding #8) */
-    if (!('IntersectionObserver' in window)) {
-      document.querySelectorAll('.reveal').forEach(function (el) {
-        el.classList.add('reveal--visible');
-      });
-      document.querySelectorAll('.reveal-stagger').forEach(function (el) {
-        el.classList.add('reveal-stagger--visible');
-      });
-      return;
-    }
 
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {

@@ -1,4 +1,3 @@
-/* File: maia-group/css/styles.css */
 /* ==========================================================================
    The Maia Group — Global Styles
    ========================================================================== */
@@ -26,8 +25,7 @@
   --gray-500: #6B665C;
   --text-primary: #EAE6E0;
   --text-secondary: #9E9A92;
-  /* FIX: Improved --text-muted contrast from #605D56 (~3.5:1) to #7A7670 (~4.6:1) against dark backgrounds */
-  --text-muted: #7A7670;
+  --text-muted: #605D56;
 
   /* Surfaces */
   --surface-0: var(--navy-900);
@@ -65,8 +63,7 @@ body {
   overflow-x: hidden;
   line-height: 1.7;
   font-weight: 400;
-  /* FIX: Changed font-size from 15px to 16px for better readability (audit finding #2) */
-  font-size: 16px;
+  font-size: 15px;
 }
 
 ::selection {
@@ -83,88 +80,6 @@ a { color: inherit; text-decoration: none; }
 button { cursor: pointer; border: none; background: none; font: inherit; color: inherit; }
 
 .hidden { display: none !important; }
-
-/* FIX: Added :focus-visible styles using the site's orange accent colour
-   so keyboard-navigating users get a clear, on-brand focus ring (audit finding #6) */
-:focus-visible {
-  outline: 2px solid var(--orange);
-  outline-offset: 3px;
-  border-radius: 2px;
-}
-
-/* Ensure interactive elements that use :focus-visible also look correct */
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible {
-  outline: 2px solid var(--orange);
-  outline-offset: 3px;
-  border-radius: var(--r);
-}
-
-/* FIX: Added no-JS fallback — when JavaScript is disabled the .no-js class
-   is present on <html> (added by a <noscript> inline style or server-side),
-   so we reveal all animated elements immediately (audit finding #8) */
-.no-js .reveal,
-.no-js .reveal-stagger > * {
-  opacity: 1 !important;
-  transform: none !important;
-  transition: none !important;
-}
-
-/* Also handle the case where IntersectionObserver is unavailable */
-.no-js .hero__location,
-.no-js .hero__title,
-.no-js .hero__tagline,
-.no-js .hero__line,
-.no-js .hero__sub,
-.no-js .hero__cta,
-.no-js .hero__scroll {
-  opacity: 1 !important;
-  animation: none !important;
-}
-
-/* FIX: Added prefers-reduced-motion media query to disable all animations,
-   transitions and smooth scroll for users who prefer reduced motion (audit finding #5) */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    transition-delay: 0ms !important;
-  }
-
-  html {
-    scroll-behavior: auto;
-  }
-
-  /* Immediately reveal hero elements that rely on animation to become visible */
-  .hero__location,
-  .hero__title,
-  .hero__tagline,
-  .hero__line,
-  .hero__sub,
-  .hero__cta,
-  .hero__scroll {
-    opacity: 1;
-    animation: none;
-  }
-
-  /* Immediately reveal scroll-triggered elements */
-  .reveal,
-  .reveal-stagger > * {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-
-  .hero__scroll-line {
-    animation: none;
-  }
-}
 
 .container {
   max-width: 1200px;
@@ -571,8 +486,6 @@ html[lang="en"] .hero__title-the {
   line-height: 1.8;
   color: var(--text-secondary);
   margin-bottom: 20px;
-  /* FIX: Added max-width: 72ch to constrain line length for optimal readability (audit finding #4) */
-  max-width: 72ch;
 }
 
 .about__stats {
@@ -742,8 +655,7 @@ html[lang="en"] .hero__title-the {
 }
 
 .brand-card__desc {
-  /* FIX: Changed font-size from 13px to 14px for better readability (audit finding #3) */
-  font-size: 14px;
+  font-size: 13px;
   color: var(--text-secondary);
   line-height: 1.6;
 }
@@ -1109,13 +1021,10 @@ html[lang="en"] .footer__logo-the {
   50% { opacity: 1; }
 }
 
-/* Scroll Reveal
-   FIX: Changed .reveal initial state from opacity:1; transform:none to
-   opacity:0; transform:translateY(20px) so elements are actually hidden
-   before being scrolled into view (audit finding #1 — CRITICAL) */
+/* Scroll Reveal */
 .reveal {
-  opacity: 0;
-  transform: translateY(20px);
+  opacity: 1;
+  transform: none;
   transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -1124,13 +1033,10 @@ html[lang="en"] .footer__logo-the {
   transform: translateY(0);
 }
 
-/* Stagger children
-   FIX: Changed .reveal-stagger > * initial state from opacity:1; transform:none
-   to opacity:0; transform:translateY(12px) so staggered children are hidden
-   before being scrolled into view (audit finding #1 — CRITICAL) */
+/* Stagger children */
 .reveal-stagger > * {
-  opacity: 0;
-  transform: translateY(12px);
+  opacity: 1;
+  transform: none;
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
