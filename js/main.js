@@ -3,12 +3,7 @@
    The Maia Group — Main JavaScript
    ========================================================================== */
 
-/* FIX: Added no-JS support — inject .no-js on <html> via a <noscript> tag in
-   the HTML, or detect here. Since JS is running, we ensure the class is
-   REMOVED so CSS no-js fallback rules don't accidentally fire (audit finding #8) */
 (function () {
-  // If the HTML element has a 'no-js' class (added server-side or via <noscript>),
-  // remove it now that JS is confirmed running.
   document.documentElement.classList.remove('no-js');
 })();
 
@@ -72,7 +67,8 @@
       'footer.privacy': 'Pol\u00edtica de Privacidad',
       'footer.terms': 'T\u00e9rminos de Uso',
       'footer.copyright': '\u00a9 2026 The Maia Group S.A.S. Todos los derechos reservados.',
-      'footer.address': 'Colombia &middot; Santa Marta, Magdalena'
+      'footer.address': 'Colombia &middot; Santa Marta, Magdalena',
+      'whatsapp.label': 'WhatsApp'
     },
     en: {
       'nav.about': 'About',
@@ -129,7 +125,8 @@
       'footer.privacy': 'Privacy Policy',
       'footer.terms': 'Terms of Use',
       'footer.copyright': '\u00a9 2026 The Maia Group S.A.S. All rights reserved.',
-      'footer.address': 'Colombia &middot; Santa Marta, Magdalena'
+      'footer.address': 'Colombia &middot; Santa Marta, Magdalena',
+      'whatsapp.label': 'WhatsApp'
     }
   };
 
@@ -141,7 +138,6 @@
 
     var t = translations[lang];
 
-    // Update innerHTML for all i18n elements
     document.querySelectorAll('[data-i18n]').forEach(function (el) {
       var key = el.getAttribute('data-i18n');
       if (t[key] !== undefined) {
@@ -149,7 +145,6 @@
       }
     });
 
-    // Update placeholder attributes
     document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
       var key = el.getAttribute('data-i18n-placeholder');
       if (t[key] !== undefined) {
@@ -157,11 +152,16 @@
       }
     });
 
-    // Update lang toggle button label (shows opposite language to switch to)
+    // Update WhatsApp FAB aria-label
+    var fab = document.querySelector('.whatsapp-fab');
+    if (fab) {
+      fab.setAttribute('aria-label',
+        lang === 'en' ? 'Chat with us on WhatsApp' : 'Chatea con nosotros en WhatsApp');
+    }
+
     var btn = document.getElementById('langToggle');
     if (btn) btn.textContent = lang === 'es' ? 'EN' : 'ES';
 
-    // Update page title
     document.title = lang === 'en'
       ? 'The Maia Group | Building the Future of Santa Marta'
       : 'The Maia Group | Construyendo el Futuro de Santa Marta';
@@ -170,16 +170,27 @@
   // ── Navigation scroll effect ──────────────────────────────────────────
   var nav = document.getElementById('nav');
 
+  // FIX #4: Keep --nav-height CSS variable in sync with the actual rendered
+  // nav height so scroll-margin-top always matches reality.
+  function syncNavHeight() {
+    var h = nav.offsetHeight;
+    document.documentElement.style.setProperty('--nav-height', h + 'px');
+  }
+
   function handleNavScroll() {
     if (window.scrollY > 60) {
       nav.classList.add('nav--scrolled');
     } else {
       nav.classList.remove('nav--scrolled');
     }
+    // Re-sync after the padding transition settles (400 ms matches CSS transition)
+    syncNavHeight();
   }
 
   window.addEventListener('scroll', handleNavScroll, { passive: true });
+  window.addEventListener('resize', syncNavHeight, { passive: true });
   handleNavScroll();
+  syncNavHeight();
 
   // ── Mobile menu toggle ────────────────────────────────────────────────
   var navToggle = document.getElementById('navToggle');
@@ -208,6 +219,8 @@
   }
 
   // ── Smooth scroll for anchor links ────────────────────────────────────
+  // FIX #4: Use the live --nav-height CSS variable value so the manual
+  // scrollTo offset always matches the current nav size (expanded vs scrolled).
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
       var targetId = this.getAttribute('href');
@@ -215,7 +228,12 @@
       var target = document.querySelector(targetId);
       if (target) {
         e.preventDefault();
-        var offset = nav.offsetHeight + 20;
+        // Read the synced nav height from the CSS variable (already a number in px)
+        var navH = parseInt(
+          getComputedStyle(document.documentElement).getPropertyValue('--nav-height'), 10
+        ) || nav.offsetHeight;
+        // 24 px matches the extra breathing room in scroll-padding-top
+        var offset = navH + 24;
         var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
         window.scrollTo({ top: top, behavior: 'smooth' });
       }
@@ -224,9 +242,6 @@
 
   // ── Scroll reveal animations ──────────────────────────────────────────
   function initReveal() {
-    /* FIX: Added prefers-reduced-motion check before setting up IntersectionObserver
-       animations. If the user prefers reduced motion, we immediately make all
-       reveal elements visible without any transition (audit finding #5 / #8) */
     var prefersReducedMotion = window.matchMedia &&
                                window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -243,8 +258,6 @@
     var footerTop = document.querySelector('.footer__top');
     if (footerTop) footerTop.classList.add('reveal');
 
-    /* FIX: If prefers-reduced-motion is active, skip the IntersectionObserver
-       entirely and make everything visible immediately (audit finding #5) */
     if (prefersReducedMotion) {
       document.querySelectorAll('.reveal').forEach(function (el) {
         el.classList.add('reveal--visible');
@@ -252,14 +265,11 @@
       document.querySelectorAll('.reveal-stagger').forEach(function (el) {
         el.classList.add('reveal-stagger--visible');
       });
-      return; // Exit early — no observer needed
+      return;
     }
 
     var observerOptions = { threshold: 0.1, rootMargin: '0px 0px -60px 0px' };
 
-    /* FIX: Added IntersectionObserver feature-detection as part of the no-JS /
-       degraded-environment fallback. If IntersectionObserver is not available
-       (very old browsers), reveal all elements immediately (audit finding #8) */
     if (!('IntersectionObserver' in window)) {
       document.querySelectorAll('.reveal').forEach(function (el) {
         el.classList.add('reveal--visible');
@@ -290,21 +300,23 @@
   }
 
   // ── Contact form handling ─────────────────────────────────────────────
+  // FIX #1: The form now has action="/success" so Netlify handles the POST
+  // and redirects to /success instead of its default (broken) thank-you URL.
+  // We keep the JS-only dev-mode simulation for local file:// testing.
   var contactForm = document.getElementById('contactForm');
   if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
-      var isNetlify = window.location.hostname.includes('netlify') ||
-                      window.location.hostname.includes('the-maia-group');
-      if (!isNetlify && window.location.protocol === 'file:') {
+      // Only intercept on local file:// — on Netlify let the native POST through.
+      if (window.location.protocol === 'file:') {
         e.preventDefault();
-        var btn = contactForm.querySelector('.form-submit');
-        var originalHTML = btn.innerHTML;
+        var submitBtn = contactForm.querySelector('.form-submit');
+        var originalHTML = submitBtn.innerHTML;
         var successMsg = currentLang === 'en' ? 'Message sent! \u2713' : '\u00a1Mensaje enviado! \u2713';
-        btn.innerHTML = successMsg;
-        btn.style.background = '#2E7D4B';
+        submitBtn.innerHTML = successMsg;
+        submitBtn.style.background = '#2E7D4B';
         setTimeout(function () {
-          btn.innerHTML = originalHTML;
-          btn.style.background = '';
+          submitBtn.innerHTML = originalHTML;
+          submitBtn.style.background = '';
           contactForm.reset();
         }, 3000);
       }
@@ -337,6 +349,7 @@
     applyLang(currentLang);
     initReveal();
     updateActiveLink();
+    syncNavHeight();
   }
 
   if (document.readyState === 'loading') {

@@ -26,7 +26,6 @@
   --gray-500: #6B665C;
   --text-primary: #EAE6E0;
   --text-secondary: #9E9A92;
-  /* FIX: Improved --text-muted contrast from #605D56 (~3.5:1) to #7A7670 (~4.6:1) against dark backgrounds */
   --text-muted: #7A7670;
 
   /* Surfaces */
@@ -43,6 +42,10 @@
   /* Spacing */
   --section-pad: 120px;
   --r: 8px;
+
+  /* FIX #4: Define nav height as a CSS custom property so scroll-margin-top
+     can reference it. The JS also sets this dynamically on resize. */
+  --nav-height: 72px;
 }
 
 /* Reset */
@@ -56,6 +59,10 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* FIX #4: scroll-padding-top on <html> offsets the browser's built-in
+     anchor jump so section headings are never hidden under the sticky nav.
+     Extra 24px gives comfortable breathing room above the heading. */
+  scroll-padding-top: calc(var(--nav-height) + 24px);
 }
 
 body {
@@ -65,7 +72,6 @@ body {
   overflow-x: hidden;
   line-height: 1.7;
   font-weight: 400;
-  /* FIX: Changed font-size from 15px to 16px for better readability (audit finding #2) */
   font-size: 16px;
 }
 
@@ -84,15 +90,12 @@ button { cursor: pointer; border: none; background: none; font: inherit; color: 
 
 .hidden { display: none !important; }
 
-/* FIX: Added :focus-visible styles using the site's orange accent colour
-   so keyboard-navigating users get a clear, on-brand focus ring (audit finding #6) */
 :focus-visible {
   outline: 2px solid var(--orange);
   outline-offset: 3px;
   border-radius: 2px;
 }
 
-/* Ensure interactive elements that use :focus-visible also look correct */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -103,9 +106,6 @@ textarea:focus-visible {
   border-radius: var(--r);
 }
 
-/* FIX: Added no-JS fallback — when JavaScript is disabled the .no-js class
-   is present on <html> (added by a <noscript> inline style or server-side),
-   so we reveal all animated elements immediately (audit finding #8) */
 .no-js .reveal,
 .no-js .reveal-stagger > * {
   opacity: 1 !important;
@@ -113,7 +113,6 @@ textarea:focus-visible {
   transition: none !important;
 }
 
-/* Also handle the case where IntersectionObserver is unavailable */
 .no-js .hero__location,
 .no-js .hero__title,
 .no-js .hero__tagline,
@@ -125,8 +124,6 @@ textarea:focus-visible {
   animation: none !important;
 }
 
-/* FIX: Added prefers-reduced-motion media query to disable all animations,
-   transitions and smooth scroll for users who prefer reduced motion (audit finding #5) */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -141,7 +138,6 @@ textarea:focus-visible {
     scroll-behavior: auto;
   }
 
-  /* Immediately reveal hero elements that rely on animation to become visible */
   .hero__location,
   .hero__title,
   .hero__tagline,
@@ -153,7 +149,6 @@ textarea:focus-visible {
     animation: none;
   }
 
-  /* Immediately reveal scroll-triggered elements */
   .reveal,
   .reveal-stagger > * {
     opacity: 1;
@@ -533,6 +528,9 @@ html[lang="en"] .hero__title-the {
 .about {
   padding: var(--section-pad) 0;
   position: relative;
+  /* FIX #4: scroll-margin-top ensures the section title clears the sticky nav
+     when the browser jumps to this anchor. Matches scroll-padding-top on <html>. */
+  scroll-margin-top: calc(var(--nav-height) + 24px);
 }
 
 .about::before {
@@ -571,7 +569,6 @@ html[lang="en"] .hero__title-the {
   line-height: 1.8;
   color: var(--text-secondary);
   margin-bottom: 20px;
-  /* FIX: Added max-width: 72ch to constrain line length for optimal readability (audit finding #4) */
   max-width: 72ch;
 }
 
@@ -613,6 +610,8 @@ html[lang="en"] .hero__title-the {
   padding: var(--section-pad) 0;
   background: var(--surface-1);
   position: relative;
+  /* FIX #4: Same scroll-margin-top treatment for the brands section */
+  scroll-margin-top: calc(var(--nav-height) + 24px);
 }
 
 .brands::before {
@@ -742,7 +741,6 @@ html[lang="en"] .hero__title-the {
 }
 
 .brand-card__desc {
-  /* FIX: Changed font-size from 13px to 14px for better readability (audit finding #3) */
   font-size: 14px;
   color: var(--text-secondary);
   line-height: 1.6;
@@ -785,7 +783,6 @@ html[lang="en"] .hero__title-the {
   color: var(--orange);
 }
 
-/* Portfolio company (Juno) — subtler styling */
 .brand-card--portfolio {
   opacity: 0.85;
 }
@@ -801,6 +798,8 @@ html[lang="en"] .hero__title-the {
 .contact {
   padding: var(--section-pad) 0;
   position: relative;
+  /* FIX #4: Same scroll-margin-top treatment for the contact section */
+  scroll-margin-top: calc(var(--nav-height) + 24px);
 }
 
 .contact::before {
@@ -1090,6 +1089,88 @@ html[lang="en"] .footer__logo-the {
 }
 
 /* ==========================================================================
+   WhatsApp Floating Action Button — FIX #3
+   ========================================================================== */
+
+.whatsapp-fab {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #25D366;
+  color: var(--white);
+  border-radius: 50px;
+  padding: 12px 20px 12px 12px;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s ease,
+              padding 0.3s ease;
+  text-decoration: none;
+  /* Collapsed by default — just the icon; label slides in on hover */
+  overflow: hidden;
+  max-width: 52px;
+}
+
+.whatsapp-fab:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(37, 211, 102, 0.45);
+  max-width: 200px; /* expand to reveal label */
+}
+
+.whatsapp-fab__icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: block;
+}
+
+.whatsapp-fab__label {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s ease 0.05s;
+}
+
+.whatsapp-fab:hover .whatsapp-fab__label {
+  opacity: 1;
+}
+
+/* On mobile keep it as a plain circle — no label, no hover expand needed */
+@media (max-width: 480px) {
+  .whatsapp-fab {
+    padding: 12px;
+    max-width: 52px;
+    border-radius: 50%;
+  }
+
+  .whatsapp-fab:hover {
+    max-width: 52px;
+    padding: 12px;
+  }
+
+  .whatsapp-fab__label {
+    display: none;
+  }
+}
+
+/* Respect reduced-motion: kill the hover lift */
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-fab {
+    transition: none;
+  }
+
+  .whatsapp-fab:hover {
+    transform: none;
+  }
+}
+
+/* ==========================================================================
    Animations
    ========================================================================== */
 
@@ -1109,10 +1190,6 @@ html[lang="en"] .footer__logo-the {
   50% { opacity: 1; }
 }
 
-/* Scroll Reveal
-   FIX: Changed .reveal initial state from opacity:1; transform:none to
-   opacity:0; transform:translateY(20px) so elements are actually hidden
-   before being scrolled into view (audit finding #1 — CRITICAL) */
 .reveal {
   opacity: 0;
   transform: translateY(20px);
@@ -1124,10 +1201,6 @@ html[lang="en"] .footer__logo-the {
   transform: translateY(0);
 }
 
-/* Stagger children
-   FIX: Changed .reveal-stagger > * initial state from opacity:1; transform:none
-   to opacity:0; transform:translateY(12px) so staggered children are hidden
-   before being scrolled into view (audit finding #1 — CRITICAL) */
 .reveal-stagger > * {
   opacity: 0;
   transform: translateY(12px);
@@ -1328,21 +1401,18 @@ html[lang="en"] .footer__logo-the {
   color: var(--orange);
 }
 
-/* Coming soon card spans extra width on tablet+ */
 @media (min-width: 600px) {
   .brand-card--soon {
     grid-column: 1 / -1;
   }
 }
 
-/* On desktop 3-col grid, span 2 cols so Ruta + Sushi fill the row */
 @media (min-width: 1024px) {
   .brand-card--soon {
     grid-column: span 2;
   }
 }
 
-/* Stagger delays for items 9–11 */
 .reveal-stagger--visible > *:nth-child(9)  { transition-delay: 0.45s; }
 .reveal-stagger--visible > *:nth-child(10) { transition-delay: 0.5s; }
 .reveal-stagger--visible > *:nth-child(11) { transition-delay: 0.55s; }

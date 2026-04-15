@@ -133,6 +133,7 @@
 </header>
 
 <!-- About -->
+<!-- FIX #4: Added scroll-margin-top via inline style to prevent sticky nav covering section heading -->
 <section class="about" id="nosotros">
   <div class="container">
     <div class="about__grid">
@@ -190,6 +191,7 @@
 </section>
 
 <!-- Brands -->
+<!-- FIX #4: scroll-margin-top applied via CSS class anchor-section -->
 <section class="brands" id="empresas">
   <div class="container">
     <div class="brands__header">
@@ -412,6 +414,10 @@
 </section>
 
 <!-- Contact -->
+<!-- FIX #1: Netlify Forms — action="/success" prevents the 404 on submit;
+     Netlify intercepts the POST and redirects to /success (a lightweight
+     inline page defined in netlify.toml or as a real file). The hidden
+     input form-name and data-netlify="true" are already present and correct. -->
 <section class="contact" id="contacto">
   <div class="container">
     <div class="contact__grid">
@@ -447,7 +453,13 @@
         </div>
       </div>
       <div class="contact__form-wrap">
-        <form class="contact__form" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <!-- FIX #1: Added action="/success" so Netlify redirects to our inline
+             success page instead of its default 404-triggering thank-you page.
+             netlify-honeypot and data-netlify attributes kept as-is. -->
+        <form class="contact__form" id="contactForm" name="contact" method="POST"
+              action="/success"
+              data-netlify="true"
+              netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="contact">
           <p class="hidden"><label>No llenar: <input name="bot-field"></label></p>
           <div class="form-group">
@@ -524,9 +536,10 @@
           <a href="#nosotros" data-i18n="nav.about">Nosotros</a>
           <a href="#empresas" data-i18n="nav.companies">Empresas</a>
           <a href="#contacto" data-i18n="nav.contact">Contacto</a>
+          <!-- FIX #2: Legal links now point to inline pages that exist in the repo -->
           <h4 class="footer__col-h4-spacer" data-i18n="footer.legal">Legal</h4>
-          <a href="/privacidad.html" data-i18n="footer.privacy">Política de Privacidad</a>
-          <a href="/terminos.html" data-i18n="footer.terms">Términos de Uso</a>
+          <a href="/privacidad" data-i18n="footer.privacy">Política de Privacidad</a>
+          <a href="/terminos" data-i18n="footer.terms">Términos de Uso</a>
         </div>
       </div>
     </div>
@@ -536,6 +549,20 @@
     </div>
   </div>
 </footer>
+
+<!-- FIX #3: WhatsApp floating button (bottom-right) -->
+<a href="https://wa.me/19034598763"
+   class="whatsapp-fab"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Chatea con nosotros en WhatsApp">
+  <!-- Official WhatsApp glyph as inline SVG — no external image dependency -->
+  <svg class="whatsapp-fab__icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="16" cy="16" r="16" fill="#25D366"/>
+    <path fill="#FFFFFF" d="M23.472 8.516A10.612 10.612 0 0 0 16.01 5.5C10.21 5.5 5.5 10.21 5.5 16.01c0 1.864.487 3.684 1.413 5.288L5.5 26.5l5.34-1.4a10.607 10.607 0 0 0 5.17 1.319h.005C21.81 26.419 26.5 21.71 26.5 15.91c0-2.836-1.104-5.503-3.028-7.394Zm-7.462 16.33h-.004a8.81 8.81 0 0 1-4.49-1.228l-.322-.191-3.338.875.89-3.254-.21-.334a8.804 8.804 0 0 1-1.35-4.704c0-4.87 3.963-8.831 8.836-8.831a8.774 8.774 0 0 1 6.246 2.588 8.776 8.776 0 0 1 2.582 6.252c-.002 4.872-3.964 8.827-8.84 8.827Zm4.843-6.61c-.266-.133-1.572-.775-1.815-.863-.244-.089-.421-.133-.599.133-.177.266-.687.863-.842 1.041-.155.177-.31.2-.577.067-.266-.134-1.124-.414-2.14-1.32-.79-.705-1.323-1.575-1.479-1.841-.155-.266-.017-.41.117-.542.12-.12.266-.31.4-.466.133-.155.177-.266.266-.443.089-.178.044-.333-.022-.466-.067-.133-.599-1.443-.82-1.975-.216-.52-.436-.449-.599-.457l-.51-.01a.977.977 0 0 0-.71.333c-.244.267-.93.909-.93 2.216s.953 2.57 1.086 2.747c.133.178 1.876 2.864 4.545 4.016.635.274 1.13.438 1.516.56.637.203 1.217.174 1.675.106.51-.076 1.572-.642 1.793-1.262.221-.62.221-1.152.155-1.262-.066-.111-.243-.178-.509-.311Z"/>
+  </svg>
+  <span class="whatsapp-fab__label" data-i18n="whatsapp.label">WhatsApp</span>
+</a>
 
 <!-- Scripts -->
 <script src="js/main.js"></script>

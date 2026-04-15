@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mensaje enviado | The Maia Group</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="theme-color" content="#0B1D33">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+<style>
+  .success-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 24px;
+    text-align: center;
+  }
+
+  .success-card {
+    max-width: 520px;
+    width: 100%;
+  }
+
+  .success-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: rgba(46, 125, 75, 0.12);
+    border: 1px solid rgba(46, 125, 75, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 32px;
+  }
+
+  .success-icon svg {
+    width: 32px;
+    height: 32px;
+    color: #4CAF79;
+  }
+
+  .success-title {
+    font-family: var(--serif);
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 400;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+
+  .success-text {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+  }
+
+  .success-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .success-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    border-radius: var(--r);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+
+  .success-btn--primary {
+    background: var(--orange);
+    color: var(--white);
+    border: none;
+  }
+
+  .success-btn--primary:hover {
+    background: var(--orange-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(242, 101, 34, 0.25);
+  }
+
+  .success-btn--ghost {
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-hover);
+  }
+
+  .success-btn--ghost:hover {
+    border-color: var(--orange);
+    color: var(--orange);
+  }
+
+  .success-countdown {
+    margin-top: 32px;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  .success-countdown strong {
+    color: var(--text-secondary);
+  }
+</style>
+</head>
+<body>
+
+<main class="success-page">
+  <div class="success-card">
+
+    <div class="success-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 6L9 17l-5-5"/>
+      </svg>
+    </div>
+
+    <h1 class="success-title" id="successTitle">¡Mensaje enviado!</h1>
+    <p class="success-text" id="successText">
+      Gracias por contactarte con The Maia Group. Hemos recibido tu mensaje y te responderemos
+      en un plazo máximo de 1–2 días hábiles.
+    </p>
+
+    <div class="success-actions">
+      <a href="/" class="success-btn success-btn--primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+          <path d="M19 12H5M12 5l-7 7 7 7"/>
+        </svg>
+        Volver al inicio
+      </a>
+      <a href="https://wa.me/19034598763" target="_blank" rel="noopener noreferrer" class="success-btn success-btn--ghost">
+        WhatsApp
+      </a>
+    </div>
+
+    <p class="success-countdown" id="successCountdown">
+      Redirigiendo al inicio en <strong id="countNum">10</strong> segundos…
+    </p>
+
+  </div>
+</main>
+
+<script>
+  // Auto-redirect countdown
+  (function () {
+    var count = 10;
+    var countEl = document.getElementById('countNum');
+    var timer = setInterval(function () {
+      count -= 1;
+      if (countEl) countEl.textContent = count;
+      if (count <= 0) {
+        clearInterval(timer);
+        window.location.href = '/';
+      }
+    }, 1000);
+
+    // Detect language from referrer or navigator
+    var lang = (navigator.language || 'es').startsWith('en') ? 'en' : 'es';
+    if (lang === 'en') {
+      var t = document.getElementById('successTitle');
+      var p = document.getElementById('successText');
+      var c = document.getElementById('successCountdown');
+      var n = document.getElementById('countNum');
+      if (t) t.textContent = 'Message sent!';
+      if (p) p.textContent = 'Thank you for reaching out to The Maia Group. We have received your message and will reply within 1–2 business days.';
+      if (c) c.innerHTML = 'Redirecting to home in <strong id="countNum">' + count + '</strong> seconds\u2026';
+    }
+  })();
+</script>
+
+</body>
+</html>
