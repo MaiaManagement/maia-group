@@ -1,0 +1,2410 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Join The Maia Group — We're hiring across 12 businesses in tech, operations, marketing, legal, hospitality, and education. Apply now and be part of something extraordinary in Santa Marta, Colombia." />
+  <meta name="keywords" content="Maia Group careers, jobs Santa Marta, hiring Colombia, tech jobs, hospitality jobs, AI company careers" />
+  <meta property="og:title" content="Careers at The Maia Group" />
+  <meta property="og:description" content="Join a growing AI-first, multicultural group of 12 businesses. Explore opportunities in tech, operations, marketing, legal, hospitality & education." />
+  <meta property="og:url" content="https://the-maia-group.com/careers.html" />
+  <meta property="og:type" content="website" />
+  <title>Careers | The Maia Group</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* =============================================
+       CSS RESET & CUSTOM PROPERTIES
+    ============================================= */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --gold:        #C9A84C;
+      --gold-light:  #E8C97A;
+      --gold-dark:   #A07830;
+      --dark:        #0D0D0D;
+      --dark-2:      #161616;
+      --dark-3:      #1E1E1E;
+      --dark-4:      #2A2A2A;
+      --gray:        #6B6B6B;
+      --gray-light:  #A8A8A8;
+      --white:       #FFFFFF;
+      --off-white:   #F5F3EF;
+      --cream:       #FAF8F4;
+      --whatsapp:    #25D366;
+      --whatsapp-dk: #1DA851;
+
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body:    'Inter', system-ui, sans-serif;
+
+      --max-w: 1200px;
+      --radius: 12px;
+      --radius-lg: 20px;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--dark);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; }
+    a   { text-decoration: none; color: inherit; }
+
+    /* =============================================
+       UTILITY CLASSES
+    ============================================= */
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .gold { color: var(--gold); }
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--white);
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--gray-light);
+      line-height: 1.7;
+      max-width: 600px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--dark);
+    }
+    .btn-gold:hover {
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(201,168,76,0.35);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1.5px solid rgba(255,255,255,0.3);
+    }
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    .btn-whatsapp {
+      background: var(--whatsapp);
+      color: var(--white);
+    }
+    .btn-whatsapp:hover {
+      background: var(--whatsapp-dk);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(37,211,102,0.35);
+    }
+
+    /* =============================================
+       LANGUAGE TOGGLE
+    ============================================= */
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50px;
+      padding: 4px;
+    }
+
+    .lang-btn {
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+      background: transparent;
+      color: var(--gray-light);
+    }
+
+    .lang-btn.active {
+      background: var(--gold);
+      color: var(--dark);
+    }
+
+    /* =============================================
+       NAVIGATION
+    ============================================= */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 18px 0;
+      transition: var(--transition);
+    }
+
+    .nav.scrolled {
+      background: rgba(13,13,13,0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+      padding: 12px 0;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-logo span {
+      color: var(--gold);
+    }
+
+    .logo-icon {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--dark);
+      flex-shrink: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--gray-light);
+      transition: var(--transition);
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gold);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* =============================================
+       HERO SECTION
+    ============================================= */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 60% 50%, rgba(201,168,76,0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 80% at 10% 80%, rgba(201,168,76,0.05) 0%, transparent 60%),
+        linear-gradient(180deg, var(--dark) 0%, var(--dark-2) 100%);
+    }
+
+    /* Decorative grid */
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
+    }
+
+    /* Floating orbs */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+    }
+    .orb-1 {
+      width: 600px; height: 600px;
+      background: rgba(201,168,76,0.07);
+      top: -200px; right: -100px;
+      animation: float 8s ease-in-out infinite;
+    }
+    .orb-2 {
+      width: 400px; height: 400px;
+      background: rgba(201,168,76,0.05);
+      bottom: -100px; left: -100px;
+      animation: float 10s ease-in-out infinite reverse;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50%       { transform: translateY(-30px); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding-top: 100px;
+      padding-bottom: 80px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(201,168,76,0.12);
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 50px;
+      padding: 8px 18px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+    }
+
+    .hero-badge-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.4; transform: scale(0.8); }
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 6vw, 4.8rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      max-width: 780px;
+    }
+
+    .hero-title .accent {
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: var(--gray-light);
+      max-width: 560px;
+      line-height: 1.75;
+      margin-bottom: 40px;
+    }
+
+    .hero-subtitle .es { display: none; }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 60px;
+    }
+
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .stat {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.82rem;
+      color: var(--gray-light);
+      letter-spacing: 0.04em;
+    }
+
+    /* Divider line */
+    .hero-stats::before {
+      display: none;
+    }
+
+    /* =============================================
+       WHY MAIA
+    ============================================= */
+    .why-maia {
+      padding: 120px 0;
+      background: var(--dark-2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .why-maia::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .section-header {
+      margin-bottom: 64px;
+    }
+
+    .section-header.centered {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .section-header.centered .section-subtitle {
+      text-align: center;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .why-card {
+      background: var(--dark-3);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius-lg);
+      padding: 36px 32px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .why-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: var(--transition);
+    }
+
+    .why-card:hover {
+      border-color: rgba(201,168,76,0.2);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    }
+
+    .why-card:hover::after {
+      transform: scaleX(1);
+    }
+
+    .why-icon {
+      width: 56px;
+      height: 56px;
+      background: rgba(201,168,76,0.1);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      transition: var(--transition);
+    }
+
+    .why-card:hover .why-icon {
+      background: rgba(201,168,76,0.18);
+      transform: scale(1.05);
+    }
+
+    .why-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--white);
+    }
+
+    .why-card p {
+      font-size: 0.92rem;
+      color: var(--gray-light);
+      line-height: 1.65;
+    }
+
+    /* =============================================
+       ROLES / DEPARTMENTS
+    ============================================= */
+    .roles {
+      padding: 120px 0;
+      background: var(--dark);
+    }
+
+    .roles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      margin-top: 64px;
+    }
+
+    .role-card {
+      background: var(--dark-3);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .role-card:hover {
+      border-color: rgba(201,168,76,0.25);
+      background: var(--dark-4);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+    }
+
+    .role-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .role-icon-wrap {
+      width: 52px;
+      height: 52px;
+      background: rgba(201,168,76,0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .role-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(37,211,102,0.1);
+      border: 1px solid rgba(37,211,102,0.2);
+      color: #4ADE80;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 50px;
+    }
+
+    .role-badge.hot {
+      background: rgba(239,68,68,0.1);
+      border-color: rgba(239,68,68,0.2);
+      color: #F87171;
+    }
+
+    .role-badge-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+
+    .role-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .role-card p {
+      font-size: 0.9rem;
+      color: var(--gray-light);
+      line-height: 1.65;
+    }
+
+    .role-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--gray-light);
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 50px;
+    }
+
+    .role-apply {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold);
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: var(--transition);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 16px;
+    }
+
+    .role-apply svg {
+      transition: var(--transition);
+    }
+
+    .role-card:hover .role-apply svg {
+      transform: translateX(4px);
+    }
+
+    /* =============================================
+       LIFESTYLE SECTION
+    ============================================= */
+    .lifestyle {
+      padding: 120px 0;
+      background: var(--dark-2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .lifestyle::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .lifestyle-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .lifestyle-visual {
+      position: relative;
+    }
+
+    .lifestyle-img-main {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: var(--dark-4);
+      aspect-ratio: 4/5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* Placeholder visual for Santa Marta */
+    .lifestyle-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg,
+        #0a1628 0%,
+        #1a2d4a 30%,
+        #0d3b2e 60%,
+        #1a4a3a 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .lifestyle-placeholder::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 40%;
+      background: linear-gradient(0deg,
+        rgba(0,80,50,0.6) 0%,
+        transparent 100%);
+    }
+
+    .lifestyle-placeholder::after {
+      content: '🌊 🏖️ 🌴';
+      font-size: 3rem;
+      position: relative;
+      z-index: 2;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));
+    }
+
+    .lifestyle-city-label {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      background: rgba(13,13,13,0.9);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: var(--radius);
+      padding: 12px 18px;
+      z-index: 10;
+    }
+
+    .lifestyle-city-label strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: var(--gold);
+    }
+
+    .lifestyle-city-label span {
+      font-size: 0.75rem;
+      color: var(--gray-light);
+    }
+
+    .lifestyle-floating-card {
+      position: absolute;
+      top: 32px;
+      right: -32px;
+      background: rgba(22,22,22,0.95);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      z-index: 10;
+      min-width: 160px;
+    }
+
+    .lifestyle-floating-card p {
+      font-size: 0.8rem;
+      color: var(--gray-light);
+      margin-bottom: 4px;
+    }
+
+    .lifestyle-floating-card strong {
+      font-size: 1.3rem;
+      font-family: var(--font-display);
+      color: var(--gold);
+    }
+
+    .lifestyle-perks {
+      margin-top: 36px;
+    }
+
+    .perk-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .perk-item:last-child {
+      border-bottom: none;
+    }
+
+    .perk-icon {
+      width: 42px;
+      height: 42px;
+      background: rgba(201,168,76,0.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .perk-text h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .perk-text p {
+      font-size: 0.85rem;
+      color: var(--gray-light);
+      line-height: 1.55;
+    }
+
+    /* =============================================
+       BUSINESSES MARQUEE
+    ============================================= */
+    .businesses {
+      padding: 80px 0;
+      background: var(--dark);
+      overflow: hidden;
+    }
+
+    .businesses-label {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 0;
+      overflow: hidden;
+      mask-image: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+    }
+
+    .marquee-inner {
+      display: flex;
+      gap: 16px;
+      animation: marquee 30s linear infinite;
+      flex-shrink: 0;
+    }
+
+    .marquee-inner:nth-child(2) {
+      animation-delay: -15s;
+    }
+
+    @keyframes marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .biz-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--dark-3);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 50px;
+      padding: 10px 20px;
+      white-space: nowrap;
+      font-size: 0.85rem;
+      color: var(--gray-light);
+      flex-shrink: 0;
+    }
+
+    .biz-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    /* =============================================
+       PROCESS SECTION
+    ============================================= */
+    .process {
+      padding: 120px 0;
+      background: var(--dark-2);
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0;
+      margin-top: 64px;
+      position: relative;
+    }
+
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 32px;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, var(--gold), rgba(201,168,76,0.2), var(--gold));
+      z-index: 0;
+    }
+
+    .step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-num {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 24px;
+      box-shadow: 0 0 0 8px var(--dark-2), 0 0 0 9px rgba(201,168,76,0.2);
+      flex-shrink: 0;
+    }
+
+    .step h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      font-size: 0.85rem;
+      color: var(--gray-light);
+      line-height: 1.6;
+    }
+
+    /* =============================================
+       TESTIMONIALS
+    ============================================= */
+    .testimonials {
+      padding: 120px 0;
+      background: var(--dark);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 64px;
+    }
+
+    .testimonial-card {
+      background: var(--dark-3);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      transition: var(--transition);
+    }
+
+    .testimonial-card:hover {
+      border-color: rgba(201,168,76,0.15);
+      transform: translateY(-3px);
+    }
+
+    .quote-mark {
+      font-family: var(--font-display);
+      font-size: 4rem;
+      line-height: 1;
+      color: var(--gold);
+      opacity: 0.4;
+      margin-bottom: -16px;
+    }
+
+    .testimonial-text {
+      font-size: 0.95rem;
+      color: var(--gray-light);
+      line-height: 1.75;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 20px;
+    }
+
+    .author-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--dark);
+      flex-shrink: 0;
+    }
+
+    .author-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    .author-role {
+      font-size: 0.78rem;
+      color: var(--gray);
+    }
+
+    .stars {
+      color: var(--gold);
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+    }
+
+    /* =============================================
+       CTA SECTION
+    ============================================= */
+    .cta-section {
+      padding: 120px 0;
+      background: var(--dark-2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .cta-bg-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--font-display);
+      font-size: clamp(80px, 15vw, 180px);
+      font-weight: 700;
+      color: rgba(201,168,76,0.03);
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+      letter-spacing: -0.02em;
+    }
+
+    .cta-inner {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .cta-inner .section-title {
+      max-width: 700px;
+    }
+
+    .cta-inner .section-subtitle {
+      text-align: center;
+    }
+
+    .cta-btns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .cta-divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .cta-divider::before,
+    .cta-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .cta-divider span {
+      font-size: 0.8rem;
+      color: var(--gray);
+      white-space: nowrap;
+    }
+
+    .cta-email {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold);
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .cta-email:hover {
+      color: var(--gold-light);
+    }
+
+    /* =============================================
+       BILINGUAL SUPPORT
+    ============================================= */
+
+    /* When Spanish is active, hide English & show Spanish */
+    body.lang-es .en { display: none !important; }
+    body.lang-es .es { display: block !important; }
+
+    body.lang-es span.es { display: inline !important; }
+    body.lang-es span.en { display: none !important; }
+
+    /* Default: English shown, Spanish hidden */
+    .es { display: none; }
+    .en { display: block; }
+    span.es { display: none; }
+    span.en { display: inline; }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    .footer {
+      background: var(--dark);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 48px 0 32px;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 0.85rem;
+      color: var(--gray);
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--gray);
+      text-align: center;
+      width: 100%;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.04);
+      margin-top: 24px;
+    }
+
+    /* =============================================
+       FLOATING WHATSAPP BUTTON
+    ============================================= */
+    .wa-float {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      z-index: 200;
+      width: 60px;
+      height: 60px;
+      background: var(--whatsapp);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      transition: var(--transition);
+      animation: wa-pulse 3s ease-in-out infinite;
+    }
+
+    .wa-float:hover {
+      background: var(--whatsapp-dk);
+      transform: scale(1.08);
+      box-shadow: 0 8px 30px rgba(37,211,102,0.5);
+    }
+
+    .wa-float svg {
+      width: 30px;
+      height: 30px;
+      fill: white;
+    }
+
+    @keyframes wa-pulse {
+      0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+      50%       { box-shadow: 0 4px 30px rgba(37,211,102,0.7), 0 0 0 8px rgba(37,211,102,0.08); }
+    }
+
+    /* =============================================
+       MOBILE MENU
+    ============================================= */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(13,13,13,0.98);
+      z-index: 99;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: var(--white);
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .mobile-menu a:hover {
+      color: var(--gold);
+    }
+
+    /* =============================================
+       SCROLL ANIMATIONS
+    ============================================= */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =============================================
+       RESPONSIVE
+    ============================================= */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      .lifestyle-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .lifestyle-floating-card {
+        right: 16px;
+      }
+
+      .process-steps::before {
+        display: none;
+      }
+
+      .process-steps {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav-actions .btn { display: none; }
+      .hero-stats { gap: 24px; }
+      .process-steps { grid-template-columns: 1fr; }
+      .wa-float { bottom: 20px; right: 20px; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-links { flex-wrap: wrap; justify-content: center; }
+    }
+  </style>
+</head>
+
+<body class="lang-en">
+
+  <!-- ========================================
+       FLOATING WHATSAPP BUTTON
+  ======================================== -->
+  <a
+    href="https://wa.me/19034598763"
+    class="wa-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat on WhatsApp"
+    title="Chat with us on WhatsApp"
+  >
+    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 0C7.163 0 0 7.163 0 16c0 2.833.737 5.494 2.027 7.806L0 32l8.445-2.004A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.28 13.28 0 01-6.793-1.861l-.487-.29-5.01 1.189 1.266-4.873-.317-.5A13.264 13.264 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.387-9.893c-.403-.202-2.387-1.178-2.757-1.313-.37-.135-.64-.202-.91.202-.27.403-1.045 1.313-1.281 1.583-.236.27-.472.303-.875.101-.403-.202-1.703-.628-3.244-2.003-1.198-1.07-2.007-2.39-2.243-2.793-.236-.403-.025-.621.177-.821.182-.18.403-.472.605-.708.202-.236.27-.403.403-.673.135-.27.068-.506-.034-.708-.101-.202-.91-2.193-1.247-3.003-.33-.789-.663-.682-.91-.695-.236-.012-.506-.015-.776-.015s-.708.101-1.079.506c-.37.404-1.415 1.383-1.415 3.374s1.449 3.913 1.651 4.183c.202.27 2.852 4.354 6.908 6.104.966.417 1.719.665 2.307.852.97.308 1.853.264 2.551.16.778-.115 2.387-.975 2.724-1.917.337-.942.337-1.75.236-1.917-.101-.168-.371-.27-.774-.472z"/>
+    </svg>
+  </a>
+
+  <!-- ========================================
+       MOBILE MENU
+  ======================================== -->
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="#why-maia" onclick="closeMobileMenu()">
+      <span class="en">Why Maia</span>
+      <span class="es">Por qué Maia</span>
+    </a>
+    <a href="#roles" onclick="closeMobileMenu()">
+      <span class="en">Open Roles</span>
+      <span class="es">Vacantes</span>
+    </a>
+    <a href="#lifestyle" onclick="closeMobileMenu()">
+      <span class="en">Lifestyle</span>
+      <span class="es">Estilo de Vida</span>
+    </a>
+    <a href="#process" onclick="closeMobileMenu()">
+      <span class="en">Process</span>
+      <span class="es">Proceso</span>
+    </a>
+    <a href="https://wa.me/19034598763" target="_blank" rel="noopener noreferrer">
+      WhatsApp
+    </a>
+  </nav>
+
+  <!-- ========================================
+       NAVIGATION
+  ======================================== -->
+  <header class="nav" id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="https://the-maia-group.com" class="nav-logo">
+          <div class="logo-icon">M</div>
+          The <span>Maia</span> Group
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#why-maia">
+            <span class="en">Why Maia</span>
+            <span class="es">Por qué Maia</span>
+          </a></li>
+          <li><a href="#roles" class="active">
+            <span class="en">Open Roles</span>
+            <span class="es">Vacantes</span>
+          </a></li>
+          <li><a href="#lifestyle">
+            <span class="en">Lifestyle</span>
+            <span class="es">Estilo de Vida</span>
+          </a></li>
+          <li><a href="#process">
+            <span class="en">Process</span>
+            <span class="es">Proceso</span>
+          </a></li>
+          <li><a href="https://the-maia-group.com">
+            <span class="en">About Us</span>
+            <span class="es">Nosotros</span>
+          </a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <div class="lang-toggle">
+            <button class="lang-btn active" id="btnEn" onclick="setLang('en')">EN</button>
+            <button class="lang-btn" id="btnEs" onclick="setLang('es')">ES</button>
+          </div>
+
+          <a href="https://wa.me/19034598763" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" viewBox="0 0 32 32" fill="currentColor"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.833.737 5.494 2.027 7.806L0 32l8.445-2.004A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm7.387 19.44c-.403-.202-2.387-1.178-2.757-1.313-.37-.135-.64-.202-.91.202-.27.403-1.045 1.313-1.281 1.583-.236.27-.472.303-.875.101-.403-.202-1.703-.628-3.244-2.003-1.198-1.07-2.007-2.39-2.243-2.793-.236-.403-.025-.621.177-.821.182-.18.403-.472.605-.708.202-.236.27-.403.403-.673.135-.27.068-.506-.034-.708-.101-.202-.91-2.193-1.247-3.003-.33-.789-.663-.682-.91-.695-.236-.012-.506-.015-.776-.015s-.708.101-1.079.506c-.37.404-1.415 1.383-1.415 3.374s1.449 3.913 1.651 4.183c.202.27 2.852 4.354 6.908 6.104.966.417 1.719.665 2.307.852.97.308 1.853.264 2.551.16.778-.115 2.387-.975 2.724-1.917.337-.942.337-1.75.236-1.917-.101-.168-.371-.27-.774-.472z"/></svg>
+            <span class="en">Apply via WhatsApp</span>
+            <span class="es">Aplicar por WhatsApp</span>
+          </a>
+
+          <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================
+       HERO
+  ======================================== -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <div class="hero-badge-dot"></div>
+          <span class="en">Now Hiring Across 12 Businesses</span>
+          <span class="es">Contratando en 12 Empresas</span>
+        </div>
+
+        <h1 class="hero-title">
+          <span class="en">
+            Build Something<br/>
+            <span class="accent">Extraordinary</span><br/>
+            With Us
+          </span>
+          <span class="es">
+            Construye Algo<br/>
+            <span class="accent">Extraordinario</span><br/>
+            Con Nosotros
+          </span>
+        </h1>
+
+        <p class="hero-subtitle">
+          <span class="en">The Maia Group is a fast-growing, AI-first constellation of 12 businesses. We're hiring bold, curious, and driven people who want to shape what's next — from the Caribbean coast of Colombia.</span>
+          <span class="es">The Maia Group es una constelación de 12 empresas en rápido crecimiento, lideradas por IA. Buscamos personas valientes, curiosas y apasionadas que quieran construir el futuro — desde la costa caribeña de Colombia.</span>
+        </p>
+
+        <div class="hero-ctas">
+          <a href="#roles" class="btn btn-gold">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 21l-4.35-4.35M17 11A6 6 0 115 11a6 6 0 0112 0z"/></svg>
+            <span class="en">Explore Open Roles</span>
+            <span class="es">Ver Vacantes</span>
+          </a>
+          <a href="https://wa.me/19034598763" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 32 32" fill="currentColor"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.833.737 5.494 2.027 7.806L0 32l8.445-2.004A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm7.387 19.44c-.403-.202-2.387-1.178-2.757-1.313-.37-.135-.64-.202-.91.202-.27.403-1.045 1.313-1.281 1.583-.236.27-.472.303-.875.101-.403-.202-1.703-.628-3.244-2.003-1.198-1.07-2.007-2.39-2.243-2.793-.236-.403-.025-.621.177-.821.182-.18.403-.472.605-.708.202-.236.27-.403.403-.673.135-.27.068-.506-.034-.708-.101-.202-.91-2.193-1.247-3.003-.33-.789-.663-.682-.91-.695-.236-.012-.506-.015-.776-.015s-.708.101-1.079.506c-.37.404-1.415 1.383-1.415 3.374s1.449 3.913 1.651 4.183c.202.27 2.852 4.354 6.908 6.104.966.417 1.719.665 2.307.852.97.308 1.853.264 2.551.16.778-.115 2.387-.975 2.724-1.917.337-.942.337-1.75.236-1.917-.101-.168-.371-.27-.774-.472z"/></svg>
+            <span class="en">Chat with Us</span>
+            <span class="es">Chatea con Nosotros</span>
+          </a>
+          <a href="https://the-maia-group.com" class="btn btn-outline">
+            <span class="en">About The Maia Group</span>
+            <span class="es">Sobre The Maia Group</span>
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num">12</span>
+            <span class="stat-label en">Active Businesses</span>
+            <span class="stat-label es">Empresas Activas</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">6+</span>
+            <span class="stat-label en">Departments Hiring</span>
+            <span class="stat-label es">Áreas Contratando</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">3+</span>
+            <span class="stat-label en">Countries Represented</span>
+            <span class="stat-label es">Países Representados</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">AI</span>
+            <span class="stat-label en">First Culture</span>
+            <span class="stat-label es">Cultura AI-First</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       BUSINESSES MARQUEE
+  ======================================== -->
+  <section class="businesses">
+    <div class="businesses-label">
+      <span class="section-label">
+        <span class="en">Our 12 Businesses</span>
+        <span class="es">Nuestras 12 Empresas</span>
+      </span>
+    </div>
+    <div class="marquee-track" aria-hidden="true">
+      <div class="marquee-inner">
+        <span class="biz-chip"><span class="biz-dot"></span>Tech &amp; Software</span>
+        <span class="biz-chip"><span class="biz-dot"></span>Hospitality</span>
+        <span class="biz-chip"><span class="biz-dot"></span>Education Platform</span>
+        <span class="biz-chip"><span class="biz-dot"></span>Digital Marketing</span>
+        <span class="biz-chip"><span class="biz-dot"></span>Legal Services</span>
+        <span class="biz-chip"><span class="biz-dot"></span>Operations Hub</span>
+        <span class="biz-chip"><span class="biz-dot"></span>AI Solutions</span>
+        <span class="biz-chip"><span class="biz-dot"></span>E-commerce</span>
+        <span class="biz-chip"><span class="biz-dot"></span>Consulting</span>
+        <span class="biz-chip"><span class="biz-dot"></span>Real Estate</span>
+        <span class="biz-chip"><span class="biz-dot"></span>Media &amp; Content</span>
+        <span class="biz-chip"><span class="biz-dot"></span>Events &amp; Experience</span>
+        <span class="biz-chip"><span class="biz-dot"></span>Tech &amp; Software</span>
+        <span class="biz-chip"><span class="biz-dot"></span>Hospitality</span>
+        <span class="biz-chip"><span class="biz-dot"></span>Education Platform</span>
+        <span class="biz-chip"><span class="biz-dot"></span>Digital Marketing</span>
+        <span class="biz-chip"><span class="biz-dot"></span>Legal Services</span>
+        <span class="biz-chip"><span class="biz-dot"></span>Operations Hub</span>
+        <span class="biz-chip"><span class="biz-dot"></span>AI Solutions</span>
+        <span class="biz-chip"><span class="biz-dot"></span>E-commerce</span>
+        <span class="biz-chip"><span class="biz-dot"></span>Consulting</span>
+        <span class="biz-chip"><span class="biz-dot"></span>Real Estate</span>
+        <span class="biz-chip"><span class="biz-dot"></span>Media &amp; Content</span>
+        <span class="biz-chip"><span class="biz-dot"></span>Events &amp; Experience</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       WHY MAIA
+  ======================================== -->
+  <section class="why-maia" id="why-maia">
+    <div class="container">
+      <div class="section-header centered reveal">
+        <span class="section-label">
+          <span class="en">Why Work With Us</span>
+          <span class="es">Por Qué Trabajar Con Nosotros</span>
+        </span>
+        <h2 class="section-title">
+          <span class="en">More Than a Job.<br/>A Movement.</span>
+          <span class="es">Más Que un Trabajo.<br/>Un Movimiento.</span>
+        </h2>
+        <p class="section-subtitle" style="text-align:center;margin:16px auto 0;">
+          <span class="en">We're building a future-proof group of businesses powered by AI, people, and purpose. Here's why people choose Maia.</span>
+          <span class="es">Construimos un grupo de empresas a prueba de futuro, impulsadas por IA, personas y propósito. Por eso la gente elige Maia.</span>
+        </p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card reveal">
+          <div class="why-icon">🤖</div>
+          <h3>
+            <span class="en">AI-First Culture</span>
+            <span class="es">Cultura AI-First</span>
+          </h3>
+          <p>
+            <span class="en">We don't just talk about AI — we use it every day. You'll work with the latest tools, automate intelligently, and help define what it means to build in the AI era.</span>
+            <span class="es">No solo hablamos de IA — la usamos todos los días. Trabajarás con las últimas herramientas y ayudarás a definir lo que significa construir en la era de la IA.</span>
+          </p>
+        </div>
+
+        <div class="why-card reveal">
+          <div class="why-icon">🌍</div>
+          <h3>
+            <span class="en">Multicultural Team</span>
+            <span class="es">Equipo Multicultural</span>
+          </h3>
+          <p>
+            <span class="en">Our team spans continents, languages, and perspectives. We believe diversity isn't a checkbox — it's our competitive edge and the source of our best ideas.</span>
+            <span class="es">Nuestro equipo abarca continentes, idiomas y perspectivas. Creemos que la diversidad es nuestra ventaja competitiva y la fuente de nuestras mejores ideas.</span>
+          </p>
+        </div>
+
+        <div class="why-card reveal">
+          <div class="why-icon">🚀</div>
+          <h3>
+            <span class="en">Rapid Growth</span>
+            <span class="es">Crecimiento Acelerado</span>
+          </h3>
+          <p>
+            <span class="en">12 businesses. Growing fast. That means real ownership, real impact, and real career acceleration — not years of waiting for a promotion.</span>
+            <span class="es">12 empresas. Crecimiento rápido. Eso significa propiedad real, impacto real y aceleración profesional real — sin esperar años por un ascenso.</span>
+          </p>
+        </div>
+
+        <div class="why-card reveal">
+          <div class="why-icon">🌴</div>
+          <h3>
+            <span class="en">Santa Marta Lifestyle</span>
+            <span class="es">Estilo de Vida Santa Marta</span>
+          </h3>
+          <p>
+            <span class="en">Work from paradise. Santa Marta is where the Caribbean Sea meets the Sierra Nevada mountains — stunning nature, warm culture, and a growing tech scene.</span>
+            <span class="es">Trabaja desde el paraíso. Santa Marta es donde el Mar Caribe se encuentra con la Sierra Nevada — naturaleza impresionante, cultura cálida y escena tech en crecimiento.</span>
+          </p>
+        </div>
+
+        <div class="why-card reveal">
+          <div class="why-icon">💡</div>
+          <h3>
+            <span class="en">Innovative DNA</span>
+            <span class="es">ADN Innovador</span>
+          </h3>
+          <p>
+            <span class="en">We reward bold thinking. If you have a better way to do something, we want to hear it. Experimentation is encouraged; bureaucracy is minimized.</span>
+            <span class="es">Recompensamos el pensamiento audaz. Si tienes una mejor forma de hacer algo, queremos escucharlo. La experimentación es bienvenida; la burocracia, mínima.</span>
+          </p>
+        </div>
+
+        <div class="why-card reveal">
+          <div class="why-icon">🤝</div>
+          <h3>
+            <span class="en">Real Ownership</span>
+            <span class="es">Responsabilidad Real</span>
+          </h3>
+          <p>
+            <span class="en">At Maia, you own your work. We trust our team members to take initiative, make decisions, and lead projects from day one — regardless of title.</span>
+            <span class="es">En Maia, tu trabajo es tuyo. Confiamos en nuestros equipos para tomar iniciativa, tomar decisiones y liderar proyectos desde el primer día, sin importar el título.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       OPEN ROLES
+  ======================================== -->
+  <section class="roles" id="roles">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">
+          <span class="en">Open Positions</span>
+          <span class="es">Posiciones Abiertas</span>
+        </span>
+        <h2 class="section-title">
+          <span class="en">Where Do You Fit?</span>
+          <span class="es">¿Dónde Encajas Tú?</span>
+        </h2>
+        <p class="section-subtitle" style="margin-top:16px;">
+          <span class="en">We're growing across every function. Explore our departments and apply via WhatsApp — we respond fast.</span>
+          <span class="es">Crecemos en todas las áreas. Explora nuestros departamentos y aplica por WhatsApp — respondemos rápido.</span>
+        </p>
+      </div>
+
+      <div class="roles-grid">
+
+        <!-- Tech -->
+        <div class="role-card reveal">
+          <div class="role-header">
+            <div class="role-icon-wrap">💻</div>
+            <span class="role-badge hot">
+              <span class="role-badge-dot"></span>
+              <span class="en">Hot</span>
+              <span class="es">Urgente</span>
+            </span>
+          </div>
+          <div>
+            <h3>
+              <span class="en">Technology</span>
+              <span class="es">Tecnología</span>
+            </h3>
+            <p>
+              <span class="en">Full-stack developers, AI/ML engineers, product managers, UX designers, and QA specialists. We're building products that leverage AI at every layer.</span>
+              <span class="es">Desarrolladores full-stack, ingenieros de IA/ML, product managers, diseñadores UX y especialistas en QA. Construimos productos con IA en cada capa.</span>
+            </p>
+          </div>
+          <div class="role-tags">
+            <span class="tag">React / Next.js</span>
+            <span class="tag">Python</span>
+            <span class="tag">AI/ML</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Product</span>
+          </div>
+          <a href="https://wa.me/19034598763?text=Hi!%20I'm%20interested%20in%20Tech%20roles%20at%20The%20Maia%20Group." class="role-apply" target="_blank" rel="noopener noreferrer">
+            <span class="en">Apply Now</span>
+            <span class="es">Aplicar Ahora</span>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Operations -->
+        <div class="role-card reveal">
+          <div class="role-header">
+            <div class="role-icon-wrap">⚙️</div>
+            <span class="role-badge">
+              <span class="role-badge-dot"></span>
+              <span class="en">Hiring</span>
+              <span class="es">Contratando</span>
+            </span>
+          </div>
+          <div>
+            <h3>
+              <span class="en">Operations</span>
+              <span class="es">Operaciones</span>
+            </h3>
+            <p>
+              <span class="en">Project managers, operations analysts, process engineers, and coordinators who love systems, efficiency, and making things run smoothly across multiple businesses.</span>
+              <span class="es">Gerentes de proyectos, analistas de operaciones e ingenieros de procesos que aman los sistemas, la eficiencia y hacer que las cosas funcionen bien en múltiples empresas.</span>
+            </p>
+          </div>
+          <div class="role-tags">
+            <span class="tag">Project Mgmt</span>
+            <span class="tag">Process Design</span>
+            <span class="tag">Analytics</span>
+            <span class="tag">Coordination</span>
+          </div>
+          <a href="https://wa.me/19034598763?text=Hi!%20I'm%20interested%20in%20Operations%20roles%20at%20The%20Maia%20Group." class="role-apply" target="_blank" rel="noopener noreferrer">
+            <span class="en">Apply Now</span>
+            <span class="es">Aplicar Ahora</span>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Marketing -->
+        <div class="role-card reveal">
+          <div class="role-header">
+            <div class="role-icon-wrap">📣</div>
+            <span class="role-badge hot">
+              <span class="role-badge-dot"></span>
+              <span class="en">Hot</span>
+              <span class="es">Urgente</span>
+            </span>
+          </div>
+          <div>
+            <h3>
+              <span class="en">Marketing</span>
+              <span class="es">Marketing</span>
+            </h3>
+            <p>
+              <span class="en">Growth marketers, social media strategists, SEO/SEM experts, content creators, brand designers, and performance marketing specialists to fuel 12 brands.</span>
+              <span class="es">Marketers de crecimiento, estrategas de redes sociales, expertos en SEO/SEM, creadores de contenido y especialistas en performance para impulsar 12 marcas.</span>
+            </p>
+          </div>
+          <div class="role-tags">
+            <span class="tag">Growth</span>
+            <span class="tag">Social Media</span>
+            <span class="tag">SEO/SEM</span>
+            <span class="tag">Content</span>
+            <span class="tag">Brand</span>
+          </div>
+          <a href="https://wa.me/19034598763?text=Hi!%20I'm%20interested%20in%20Marketing%20roles%20at%20The%20Maia%20Group." class="role-apply" target="_blank" rel="noopener noreferrer">
+            <span class="en">Apply Now</span>
+            <span class="es">Aplicar Ahora</span>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Legal -->
+        <div class="role-card reveal">
+          <div class="role-header">
+            <div class="role-icon-wrap">⚖️</div>
+            <span class="role-badge">
+              <span class="role-badge-dot"></span>
+              <span class="en">Hiring</span>
+              <span class="es">Contratando</span>
+            </span>
+          </div>
+          <div>
+            <h3>
+              <span class="en">Legal</span>
+              <span class="es">Legal</span>
+            </h3>
+            <p>
+              <span class="en">Corporate lawyers, compliance specialists, contract managers, and legal advisors familiar with Colombian and international law, tech regulation, and business structuring.</span>
+              <span class="es">Abogados corporativos, especialistas en cumplimiento, gestores de contratos y asesores legales con conocimiento en derecho colombiano e internacional, regulación tech y estructuración empresarial.</span>
+            </p>
+          </div>
+          <div class="role-tags">
+            <span class="tag">Corporate Law</span>
+            <span class="tag">Compliance</span>
+            <span class="tag">Contracts</span>
+            <span class="tag">Bilingual</span>
+          </div>
+          <a href="https://wa.me/19034598763?text=Hi!%20I'm%20interested%20in%20Legal%20roles%20at%20The%20Maia%20Group." class="role-apply" target="_blank" rel="noopener noreferrer">
+            <span class="en">Apply Now</span>
+            <span class="es">Aplicar Ahora</span>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Hospitality -->
+        <div class="role-card reveal">
+          <div class="role-header">
+            <div class="role-icon-wrap">🏨</div>
+            <span class="role-badge hot">
+              <span class="role-badge-dot"></span>
+              <span class="en">Hot</span>
+              <span class="es">Urgente</span>
+            </span>
+          </div>
+          <div>
+            <h3>
+              <span class="en">Hospitality</span>
+              <span class="es">Hospitalidad</span>
+            </h3>
+            <p>
+              <span class="en">Guest experience managers, hotel operations staff, F&amp;B specialists, concierge, event coordinators, and property management professionals for our Santa Marta portfolio.</span>
+              <span class="es">Gerentes de experiencia al huésped, personal de operaciones hoteleras, especialistas en A&amp;B, conserjes, coordinadores de eventos y profesionales de gestión de propiedades en Santa Marta.</span>
+            </p>
+          </div>
+          <div class="role-tags">
+            <span class="tag">Guest Experience</span>
+            <span class="tag">F&amp;B</span>
+            <span class="tag">Property Mgmt</span>
+            <span class="tag">Events</span>
+          </div>
+          <a href="https://wa.me/19034598763?text=Hi!%20I'm%20interested%20in%20Hospitality%20roles%20at%20The%20Maia%20Group." class="role-apply" target="_blank" rel="noopener noreferrer">
+            <span class="en">Apply Now</span>
+            <span class="es">Aplicar Ahora</span>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Education -->
+        <div class="role-card reveal">
+          <div class="role-header">
+            <div class="role-icon-wrap">📚</div>
+            <span class="role-badge">
+              <span class="role-badge-dot"></span>
+              <span class="en">Hiring</span>
+              <span class="es">Contratando</span>
+            </span>
+          </div>
+          <div>
+            <h3>
+              <span class="en">Education</span>
+              <span class="es">Educación</span>
+            </h3>
+            <p>
+              <span class="en">Curriculum designers, e-learning developers, instructors, academic coordinators, and learning experience designers for our education ventures focused on digital skills and AI literacy.</span>
+              <span class="es">Diseñadores de currículum, desarrolladores de e-learning, instructores y coordinadores académicos para nuestras iniciativas educativas enfocadas en habilidades digitales e IA.</span>
+            </p>
+          </div>
+          <div class="role-tags">
+            <span class="tag">Curriculum Design</span>
+            <span class="tag">E-learning</span>
+            <span class="tag">AI Literacy</span>
+            <span class="tag">Instruction</span>
+          </div>
+          <a href="https://wa.me/19034598763?text=Hi!%20I'm%20interested%20in%20Education%20roles%20at%20The%20Maia%20Group." class="role-apply" target="_blank" rel="noopener noreferrer">
+            <span class="en">Apply Now</span>
+            <span class="es">Aplicar Ahora</span>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- General Application CTA -->
+      <div style="text-align:center;margin-top:56px;" class="reveal">
+        <p style="color:var(--gray-light);margin-bottom:20px;font-size:0.95rem;">
+          <span class="en">Don't see your role? We're always open to exceptional people.</span>
+          <span class="es">¿No ves tu rol? Siempre estamos abiertos a personas excepcionales.</span>
+        </p>
+        <a href="https://wa.me/19034598763?text=Hi!%20I'd%20like%20to%20learn%20about%20opportunities%20at%20The%20Maia%20Group." class="btn btn-gold" target="_blank" rel="noopener noreferrer">
+          <span class="en">Send a General Application</span>
+          <span class="es">Enviar Aplicación General</span>
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       LIFESTYLE / SANTA MARTA
+  ======================================== -->
+  <section class="lifestyle" id="lifestyle">
+    <div class="container">
+      <div class="lifestyle-inner">
+        <!-- Visual -->
+        <div class="lifestyle-visual reveal">
+          <div class="lifestyle-img-main">
+            <div class="lifestyle-placeholder" role="img" aria-label="Santa Marta, Colombia - Caribbean coast"></div>
+            <div class="lifestyle-city-label">
+              <strong>Santa Marta</strong>
+              <span>Colombia 🇨🇴</span>
+            </div>
+          </div>
+          <div class="lifestyle-floating-card">
+            <p>
+              <span class="en">Avg. temperature</span>
+              <span class="es">Temp. promedio</span>
+            </p>
+            <strong>28°C / 82°F 🌞</strong>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="reveal">
+          <span class="section-label">
+            <span class="en">Life at Maia</span>
+            <span class="es">Vida en Maia</span>
+          </span>
+          <h2 class="section-title" style="margin-bottom:16px;">
+            <span class="en">Work Where<br/>Others Vacation</span>
+            <span class="es">Trabaja Donde<br/>Otros Vacacionan</span>
+          </h2>
+          <p class="section-subtitle" style="margin-bottom:36px;">
+            <span class="en">Santa Marta is Colombia's crown jewel — the oldest surviving city in South America, where Caribbean beaches meet the world's highest coastal mountain range. It's not just beautiful. It's affordable, growing, and full of opportunity.</span>
+            <span class="es">Santa Marta es la joya de Colombia — la ciudad más antigua de América del Sur, donde las playas del Caribe se encuentran con la cordillera costera más alta del mundo. No solo es hermosa. Es asequible, en crecimiento y llena de oportunidades.</span>
+          </p>
+
+          <div class="lifestyle-perks">
+            <div class="perk-item">
+              <div class="perk-icon">🧘</div>
+              <div class="perk-text">
+                <h4>
+                  <span class="en">Work-Life Harmony</span>
+                  <span class="es">Armonía Trabajo-Vida</span>
+                </h4>
+                <p>
+                  <span class="en">Beach at lunch, mountains on weekends. We believe great work comes from great balance.</span>
+                  <span class="es">Playa al mediodía, montañas el fin de semana. Creemos que el gran trabajo nace del gran equilibrio.</span>
+                </p>
+              </div>
+            </div>
+            <div class="perk-item">
+              <div class="perk-icon">🌐</div>
+              <div class="perk-text">
+                <h4>
+                  <span class="en">Remote-Friendly Culture</span>
+                  <span class="es">Cultura Remota</span>
+                </h4>
+                <p>
+                  <span class="en">Many roles are flexible or remote-capable. We hire globally and let great work speak for itself, wherever you are.</span>
+                  <span class="es">Muchos roles son flexibles o remotos. Contratamos globalmente y dejamos que el gran trabajo hable por sí solo, donde sea que estés.</span>
+                </p>
+              </div>
+            </div>
+            <div class="perk-item">
+              <div class="perk-icon">📈</div>
+              <div class="perk-text">
+                <h4>
+                  <span class="en">Competitive Compensation</span>
+                  <span class="es">Compensación Competitiva</span>
+                </h4>
+                <p>
+                  <span class="en">We offer competitive, market-aligned salaries, performance bonuses, and equity conversations as the group scales.</span>
+                  <span class="es">Ofrecemos salarios competitivos alineados al mercado, bonos de desempeño y conversaciones de equity conforme el grupo crece.</span>
+                </p>
+              </div>
+            </div>
+            <div class="perk-item">
+              <div class="perk-icon">🎓</div>
+              <div class="perk-text">
+                <h4>
+                  <span class="en">Learning &amp; Development</span>
+                  <span class="es">Aprendizaje y Desarrollo</span>
+                </h4>
+                <p>
+                  <span class="en">Access to courses, AI tools, cross-business projects, and mentorship from founders and senior leaders across 12 companies.</span>
+                  <span class="es">Acceso a cursos, herramientas de IA, proyectos inter-empresariales y mentoría de fundadores y líderes senior de 12 empresas.</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       HIRING PROCESS
+  ======================================== -->
+  <section class="process" id="process">
+    <div class="container">
+      <div class="section-header centered reveal">
+        <span class="section-label">
+          <span class="en">Hiring Process</span>
+          <span class="es">Proceso de Selección</span>
+        </span>
+        <h2 class="section-title">
+          <span class="en">Simple, Fast, Human</span>
+          <span class="es">Simple, Rápido, Humano</span>
+        </h2>
+        <p class="section-subtitle" style="text-align:center;margin:16px auto 0;">
+          <span class="en">No endless forms or month-long waits. We value your time as much as ours.</span>
+          <span class="es">Sin formularios interminables ni esperas de un mes. Valoramos tu tiempo tanto como el nuestro.</span>
+        </p>
+      </div>
+
+      <div class="process-steps">
+        <div class="step reveal">
+          <div class="step-num">1</div>
+          <h3>
+            <span class="en">WhatsApp Intro</span>
+            <span class="es">Intro por WhatsApp</span>
+          </h3>
+          <p>
+            <span class="en">Send us a quick message with your role of interest and a little about yourself. We read every message.</span>
+            <span class="es">Envíanos un mensaje rápido con el rol que te interesa y un poco sobre ti. Leemos cada mensaje.</span>
+          </p>
+        </div>
+
+        <div class="step reveal">
+          <div class="step-num">2</div>
+          <h3>
+            <span class="en">First Conversation</span>
+            <span class="es">Primera Conversación</span>
+          </h3>
+          <p>
+            <span class="en">A casual 30-min call to learn about each other — your background, interests, and how you might fit in our world.</span>
+            <span class="es">Una llamada informal de 30 min para conocernos — tu experiencia, intereses y cómo podrías encajar en nuestro mundo.</span>
+          </p>
+        </div>
+
+        <div class="step reveal">
+          <div class="step-num">3</div>
+          <h3>
+            <span class="en">Skills Showcase</span>
+            <span class="es">Demostración de Habilidades</span>
+          </h3>
+          <p>
+            <span class="en">A short, practical task or case study relevant to the role. No trick questions — just real work to see how you think.</span>
+            <span class="es">Una tarea práctica breve o caso de estudio relevante para el rol. Sin preguntas trampa — solo trabajo real para ver cómo piensas.</span>
+          </p>
+        </div>
+
+        <div class="step reveal">
+          <div class="step-num">4</div>
+          <h3>
+            <span class="en">Offer &amp; Onboarding</span>
+            <span class="es">Oferta e Incorporación</span>
+          </h3>
+          <p>
+            <span class="en">If it's a great fit, we move fast. Offer within days, onboarding that sets you up for success from day one.</span>
+            <span class="es">Si hay gran compatibilidad, actuamos rápido. Oferta en días, incorporación que te prepara para el éxito desde el primer día.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       TESTIMONIALS
+  ======================================== -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-header centered reveal">
+        <span class="section-label">
+          <span class="en">Team Stories</span>
+          <span class="es">Historias del Equipo</span>
+        </span>
+        <h2 class="section-title">
+          <span class="en">Hear From Our People</span>
+          <span class="es">Escucha a Nuestros Colaboradores</span>
+        </h2>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal">
+          <div class="stars">★★★★★</div>
+          <div class="quote-mark">"</div>
+          <p class="testimonial-text">
+            <span class="en">I joined Maia as a developer and within six months I was leading a product team. The trust they place in you from the start is unlike anywhere I've worked before. Plus, I can surf before my morning standup.</span>
+            <span class="es">Me uní a Maia como desarrollador y en seis meses ya lideraba un equipo de producto. La confianza que depositan en ti desde el inicio es incomparable. Además, puedo surfear antes de mi reunión matinal.</span>
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">DM</div>
+            <div>
+              <div class="author-name">Diego M.</div>
+              <div class="author-role en">Senior Developer · Technology</div>
+              <div class="author-role es">Desarrollador Senior · Tecnología</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <div class="stars">★★★★★</div>
+          <div class="quote-mark">"</div>
+          <p class="testimonial-text">
+            <span class="en">The multicultural environment is real. My team is from Colombia, the US, and Europe. We bring different views to every challenge and that makes our marketing so much richer and more effective.</span>
+            <span class="es">El ambiente multicultural es real. Mi equipo es de Colombia, Estados Unidos y Europa. Aportamos diferentes perspectivas a cada reto y eso hace que nuestro marketing sea mucho más rico y efectivo.</span>
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">SL</div>
+            <div>
+              <div class="author-name">Sofía L.</div>
+              <div class="author-role en">Marketing Lead · Growth</div>
+              <div class="author-role es">Líder de Marketing · Crecimiento</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <div class="stars">★★★★★</div>
+          <div class="quote-mark">"</div>
+          <p class="testimonial-text">
+            <span class="en">Coming from a traditional hospitality background, I was nervous about joining a tech-forward group. But Maia bridged both worlds perfectly — innovation with warmth, just like Santa Marta itself.</span>
+            <span class="es">Viniendo del sector hotelero tradicional, tenía dudas sobre unirme a un grupo orientado a la tecnología. Pero Maia unió ambos mundos perfectamente — innovación con calidez, como la propia Santa Marta.</span>
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">CR</div>
+            <div>
+              <div class="author-name">Camila R.</div>
+              <div class="author-role en">Guest Experience Manager · Hospitality</div>
+              <div class="author-role es">Gerente de Experiencia · Hospitalidad</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       FINAL CTA
+  ======================================== -->
+  <section class="cta-section">
+    <div class="cta-bg-text" aria-hidden="true">MAIA</div>
+    <div class="container">
+      <div class="cta-inner">
+        <span class="section-label">
+          <span class="en">Ready to Join?</span>
+          <span class="es">¿Listo para Unirte?</span>
+        </span>
+
+        <h2 class="section-title reveal">
+          <span class="en">Your Next Chapter<br/>Starts Here</span>
+          <span class="es">Tu Próximo Capítulo<br/>Empieza Aquí</span>
+        </h2>
+
+        <p class="section-subtitle reveal">
+          <span class="en">Don't wait for the perfect moment. Apply today via WhatsApp and let's have a real conversation about how you can make an impact at The Maia Group.</span>
+          <span class="es">No esperes el momento perfecto. Aplica hoy por WhatsApp y tengamos una conversación real sobre cómo puedes generar impacto en The Maia Group.</span>
+        </p>
+
+        <div class="cta-btns reveal">
+          <a
+            href="https://wa.me/19034598763?text=Hi!%20I'm%20interested%20in%20joining%20The%20Maia%20Group.%20I'd%20love%20to%20learn%20more%20about%20available%20roles."
+            class="btn btn-whatsapp"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="font-size:1rem;padding:16px 32px;"
+          >
+            <svg width="22" height="22" viewBox="0 0 32 32" fill="currentColor"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.833.737 5.494 2.027 7.806L0 32l8.445-2.004A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm7.387 19.44c-.403-.202-2.387-1.178-2.757-1.313-.37-.135-.64-.202-.91.202-.27.403-1.045 1.313-1.281 1.583-.236.27-.472.303-.875.101-.403-.202-1.703-.628-3.244-2.003-1.198-1.07-2.007-2.39-2.243-2.793-.236-.403-.025-.621.177-.821.182-.18.403-.472.605-.708.202-.236.27-.403.403-.673.135-.27.068-.506-.034-.708-.101-.202-.91-2.193-1.247-3.003-.33-.789-.663-.682-.91-.695-.236-.012-.506-.015-.776-.015s-.708.101-1.079.506c-.37.404-1.415 1.383-1.415 3.374s1.449 3.913 1.651 4.183c.202.27 2.852 4.354 6.908 6.104.966.417 1.719.665 2.307.852.97.308 1.853.264 2.551.16.778-.115 2.387-.975 2.724-1.917.337-.942.337-1.75.236-1.917-.101-.168-.371-.27-.774-.472z"/></svg>
+            <span class="en">Apply Now on WhatsApp</span>
+            <span class="es">Aplicar Ahora por WhatsApp</span>
+          </a>
+        </div>
+
+        <div class="cta-divider reveal">
+          <span class="en">or reach us by email</span>
+          <span class="es">o escríbenos por correo</span>
+        </div>
+
+        <a href="mailto:careers@the-maia-group.com" class="cta-email reveal">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          careers@the-maia-group.com
+        </a>
+
+        <p style="font-size:0.78rem;color:var(--gray);margin-top:8px;" class="reveal">
+          <span class="en">+1 (903) 459-8763 · Santa Marta, Colombia</span>
+          <span class="es">+1 (903) 459-8763 · Santa Marta, Colombia</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       FOOTER
+  ======================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <div class="logo-icon" style="width:32px;height:32px;font-size:0.85rem;">M</div>
+          The <span style="color:var(--gold);margin:0 4px;">Maia</span> Group
+        </div>
+
+        <ul class="footer-links">
+          <li><a href="https://the-maia-group.com">
+            <span class="en">Home</span>
+            <span class="es">Inicio</span>
+          </a></li>
+          <li><a href="#roles">
+            <span class="en">Roles</span>
+            <span class="es">Vacantes</span>
+          </a></li>
+          <li><a href="#why-maia">
+            <span class="en">About</span>
+            <span class="es">Nosotros</span>
+          </a></li>
+          <li><a href="mailto:careers@the-maia-group.com">
+            <span class="en">Contact</span>
+            <span class="es">Contacto</span>
+          </a></li>
+          <li><a href="https://wa.me/19034598763" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+        </ul>
+
+        <div class="lang-toggle" style="background:rgba(255,255,255,0.05);">
+          <button class="lang-btn active" id="footerBtnEn" onclick="setLang('en')">EN</button>
+          <button class="lang-btn" id="footerBtnEs" onclick="setLang('es')">ES</button>
+        </div>
+      </div>
+
+      <p class="footer-copy">
+        <span class="en">© 2025 The Maia Group · Santa Marta, Colombia · All rights reserved</span>
+        <span class="es">© 2025 The Maia Group · Santa Marta, Colombia · Todos los derechos reservados</span>
+      </p>
+    </div>
+  </footer>
+
+  <!-- ========================================
+       JAVASCRIPT
+  ======================================== -->
+  <script>
+    // ============================================================
+    // NAV SCROLL EFFECT
+    // ============================================================
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // ============================================================
+    // MOBILE MENU
+    // ============================================================
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    function toggleMobileMenu() {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
+
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // Close mobile menu on outside click
+    mobileMenu.addEventListener('click', (e) => {
+      if (e.target === mobileMenu) closeMobileMenu();
+    });
+
+    // ============================================================
+    // LANGUAGE TOGGLE
+    // ============================================================
+    function setLang(lang) {
+      const isEs = lang === 'es';
+
+      document.body.classList.toggle('lang-es', isEs);
+      document.body.classList.toggle('lang-en', !isEs);
+
+      // Update all lang buttons
+      ['btnEn', 'btnEs', 'footerBtnEn', 'footerBtnEs'].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const isActive =
+          (id.includes('En') && !isEs) ||
+          (id.includes('Es') && isEs);
+        el.classList.toggle('active', isActive);
+      });
+
+      // Update html lang attribute
+      document.documentElement.lang = isEs ? 'es' : 'en';
+
+      // Update meta description
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) {
+        metaDesc.content = isEs
+          ? 'Únete a The Maia Group — Contratamos en 12 empresas en tech, operaciones, marketing, legal, hospitalidad y educación. Aplica ahora desde Santa Marta, Colombia.'
+          : 'Join The Maia Group — We\'re hiring across 12 businesses in tech, operations, marketing, legal, hospitality, and education. Apply now and be part of something extraordinary in Santa Marta, Colombia.';
+      }
+    }
+
+    // ============================================================
+    // SCROLL REVEAL ANIMATION
+    // ============================================================
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            // Stagger siblings in the same grid
+            const parent = entry.target.parentElement;
+            const siblings = Array.from(parent.querySelectorAll('.reveal'));
+            const idx = siblings.indexOf(entry.target);
+            const delay = Math.min(idx * 80, 400);
+
+            setTimeout(() => {
+              entry.target.classList.add('visible');
+            }, delay);
+
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    );
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // ============================================================
+    // SMOOTH ANCHOR SCROLL WITH NAV OFFSET
+    // ============================================================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+
+        const target = document.querySelector(href);
+        if (!target) return;
+
+        e.preventDefault();
+        const navHeight = navbar.offsetHeight + 24;
+        const top = target.getBoundingClientRect().top + window.scrollY - navHeight;
+
+        window.scrollTo({ top, behavior: 'smooth' });
+      });
+    });
+
+    // ============================================================
+    // ACTIVE NAV LINK ON SCROLL
+    // ============================================================
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    const sectionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            navLinks.forEach(link => {
+              link.classList.toggle(
+                'active',
+                link.getAttribute('href') === `#${entry.target.id}`
+              );
+            });
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+
+    sections.forEach(section => sectionObserver.observe(section));
+  </script>
+
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/19034598763"
+   class="whatsapp-float"
+   target="_blank"
+   rel="noopener"
+   aria-label="Chat on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="white">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<style>
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #25D366;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  z-index: 9999;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+}
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+}
+</style>
+
+</body>
+</html>
+```
