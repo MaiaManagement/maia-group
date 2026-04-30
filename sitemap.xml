@@ -9,6 +9,13 @@
   </url>
 
   <url>
+    <loc>https://the-maia-group.com/contact.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://the-maia-group.com/portfolio.html</loc>
     <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
@@ -30,10 +37,4 @@
   </url>
 
   <url>
-    <loc>https://the-maia-group.com/terminos.html</loc>
-    <lastmod>2026-04-29</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-
-</urlset>
+ 
