@@ -10,6 +10,9 @@ node_modules/
 # Netlify
 .netlify/
 
+# Local agent worktrees
+.claude/
+
 # OS
 .DS_Store
 Thumbs.db
