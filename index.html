@@ -33,9 +33,9 @@
 
 <!-- Favicons -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=20260430-r1">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=20260430-r1">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=20260430-r1">
 <meta name="theme-color" content="#0B1D33">
 
 <!-- Structured Data -->
@@ -74,13 +74,9 @@
 }
 </script>
 
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <!-- Styles -->
-<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/styles.css?v=20260430-r1">
 </head>
 <body>
 
@@ -98,7 +94,7 @@
       <a href="#contacto" class="nav__link" data-i18n="nav.contact">Contacto</a>
     </div>
     <div class="nav__actions">
-      <button class="nav__lang" id="langToggle" aria-label="Switch language">EN</button>
+      <button class="nav__lang" id="langToggle">EN</button>
       <button class="nav__toggle" id="navToggle" aria-label="Abrir menú">
         <span></span>
         <span></span>
@@ -433,7 +429,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
             <div>
               <span class="contact__item-label" data-i18n="contact.email-label">Email</span>
-              <a href="mailto:info@the-maia-group.com">info@the-maia-group.com</a>
+              <!--email_off--><a href="mailto:info@the-maia-group.com">info@the-maia-group.com</a><!--/email_off-->
             </div>
           </div>
           <div class="contact__item">
@@ -515,7 +511,7 @@
       </div>
       <div class="footer__links">
         <div class="footer__col">
-          <h4 data-i18n="footer.companies">Empresas</h4>
+          <h3 data-i18n="footer.companies">Empresas</h3>
           <a href="https://maia-management.com" target="_blank" rel="noopener">Maia Management</a>
           <a href="https://maia-legal.com" target="_blank" rel="noopener">Maia Legal</a>
           <a href="https://maia-realty.com" target="_blank" rel="noopener">Maia Realty</a>
@@ -524,7 +520,7 @@
           <a href="https://lleva-lleva.com" target="_blank" rel="noopener">LlevaLleva</a>
         </div>
         <div class="footer__col">
-          <h4 data-i18n="footer.companies">Empresas</h4>
+          <h3 data-i18n="footer.companies">Empresas</h3>
           <a href="https://juno-retreats.com" target="_blank" rel="noopener">Juno House Studios</a>
           <a href="https://mapana-marine.com" target="_blank" rel="noopener">Mapaná Marine</a>
           <a href="https://el-sanatorio.com" target="_blank" rel="noopener">El Sanatorio</a>
@@ -532,12 +528,12 @@
           <span class="footer__soon">Sushi Pop &middot; <em data-i18n="brand.coming-soon">Próximamente</em></span>
         </div>
         <div class="footer__col">
-          <h4 data-i18n="footer.group">Grupo</h4>
+          <h3 data-i18n="footer.group">Grupo</h3>
           <a href="#nosotros" data-i18n="nav.about">Nosotros</a>
           <a href="#empresas" data-i18n="nav.companies">Empresas</a>
           <a href="#contacto" data-i18n="nav.contact">Contacto</a>
           <!-- FIX #2: Legal links now point to inline pages that exist in the repo -->
-          <h4 class="footer__col-h4-spacer" data-i18n="footer.legal">Legal</h4>
+          <h3 class="footer__col-h4-spacer" data-i18n="footer.legal">Legal</h3>
           <a href="/privacidad" data-i18n="footer.privacy">Política de Privacidad</a>
           <a href="/terminos" data-i18n="footer.terms">Términos de Uso</a>
         </div>
@@ -565,6 +561,6 @@
 </a>
 
 <!-- Scripts -->
-<script src="js/main.js"></script>
+<script src="js/main.js?v=20260430-r1" defer></script>
 </body>
 </html>

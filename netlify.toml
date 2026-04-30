@@ -9,6 +9,8 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    Content-Security-Policy = "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: https:; connect-src 'self' https://static.cloudflareinsights.com; upgrade-insecure-requests"
 
 [[headers]]
   for = "/css/*"
@@ -19,4 +21,47 @@
   for = "/js/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/favicon*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/apple-touch-icon.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[redirects]]
+  from = "/privacidad.html"
+  to = "/privacidad"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/privacidad"
+  to = "/privacidad.html"
+  status = 200
+
+[[redirects]]
+  from = "/terminos.html"
+  to = "/terminos"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/terminos"
+  to = "/terminos.html"
+  status = 200
+
+[[redirects]]
+  from = "/success.html"
+  to = "/success"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/success"
+  to = "/success.html"
+  status = 200
 
