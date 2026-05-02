@@ -1,4 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="6" fill="#0B1D33"/>
-  <path d="M7 23V10l9 8 9-8v13" stroke="#F26522" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- The Maia Group — Deep navy bg, gold MG lettermark -->
+  <rect width="512" height="512" rx="102" ry="102" fill="#0D1B2A"/>
+  <!-- Subtle gold border -->
+  <rect x="6" y="6" width="500" height="500" rx="98" ry="98" fill="none" stroke="#C9A84C" stroke-width="6" opacity="0.4"/>
+  <!-- M letterform -->
+  <text x="256" y="300" font-family="'Arial Black', 'Helvetica Neue', Arial, sans-serif" font-weight="900" font-size="210" fill="#C9A84C" text-anchor="middle" letter-spacing="-8">MG</text>
+  <!-- Thin gold underline accent -->
+  <rect x="120" y="340" width="272" height="8" rx="4" fill="#C9A84C" opacity="0.7"/>
 </svg>
